@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .bookshelf {
+            margin-top: 20px;
+        }
+        .book {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .book:last-child {
+            border-bottom: none;
+        }
+        .book h3 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .book p {
+            margin: 5px 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Bookshelf</h1>
+        <div class="bookshelf" id="bookshelf">
+            <div class="book">
+                <h3>The Great Gatsby</h3>
+                <p>by F. Scott Fitzgerald</p>
+                <p>Read in 2023</p>
+            </div>
+            <div class="book">
+                <h3>To Kill a Mockingbird</h3>
+                <p>by Harper Lee</p>
+                <p>Read in 2022</p>
+            </div>
+            <div class="book">
+                <h3>1984</h3>
+                <p>by George Orwell</p>
+                <p>Read in 2021</p>
+            </div>
+            <div class="book">
+                <h3>Pride and Prejudice</h3>
+                <p>by Jane Austen</p>
+                <p>Read in 2020</p>
+            </div>
+            <!-- Add more books here -->
+        </div>
+    </div>
+</body>
+</html>

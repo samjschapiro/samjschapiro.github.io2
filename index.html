@@ -224,65 +224,34 @@
             <u>Samuel Schapiro,</u> Erin Zhang, Han Zhao, Arindam Banerjee <br>
             <i>Princeton Workshop on Optimization, Learning, and Control 2024</i></p>
 
-        <h2>Philosophy, Metaphysics, and Theoretical Psychology</h2>
+        <h2>Philosophy and Theoretical Psychology (informal) </h2>
         <div id="recent-articles">
-        </div>
-            <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            console.log('DOM fully loaded and parsed');        
-            async function fetchRecentArticles() {
-                console.log("fetchRecentArticles function called");
-                const substackUsername = 'samuelschapiro';
-                const apiUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(`https://${substackUsername}.substack.com/feed`)}`;
-
-        
-                try {
-                    console.log("Fetching articles from:", apiUrl);
-                    const response = await fetch(apiUrl);
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    const data = await response.json();
-                    console.log("Received data:", data);
-                    
-                    if (!data.items || data.items.length === 0) {
-                        throw new Error("No articles found in the response");
-                    }
-        
-                    const articles = data.items.slice(0, 3); // Get the 5 most recent articles
-        
-                    const articlesContainer = document.getElementById('recent-articles');
-                    if (!articlesContainer) {
-                        console.error("Couldn't find the 'recent-articles' container");
-                        return;
-                    }
-        
-                    articlesContainer.innerHTML = ''; // Clear any existing content
-        
-                    articles.forEach(article => {
-                        const articleElement = document.createElement('div');
-                        articleElement.className = 'article-item';
-                        articleElement.innerHTML = `
-                            <a href="${article.link}" class="article-title">${article.title}</a>
-                            <div class="article-description">${article.description.split(' ').slice(0, 20).join(' ')}...</div>
-                        `;
-                        articlesContainer.appendChild(articleElement);
-                    });
-        
-                    console.log("Articles added to the DOM");
-                } catch (error) {
-                    console.error('Error fetching Substack articles:', error);
-                    const articlesContainer = document.getElementById('recent-articles');
-                    if (articlesContainer) {
-                        articlesContainer.innerHTML = '<p>Error loading articles. Please try again later.</p>';
-                    }
-                }
-            }
-        
-            // Call fetchRecentArticles immediately
-            fetchRecentArticles();
-    </script>
-        
+            <div class="article-item">
+                <a href="https://samuelschapiro.substack.com/p/this-weeks-aphorisms-929-on-truth" class="article-title">
+                    This Week’s Aphorisms 9/29: On Truth
+                </a>
+                <div class="article-description">
+                    If one wishes to understand anything about truth at all, one must ask “what utility does this truth serve its originators and evangelists?”
+                </div>
+            </div>
+            <div class="article-item">
+                <a href="https://samuelschapiro.substack.com/p/metaphysical-precepts-of-object-cathexes" class="article-title">
+                    Metaphysical Precepts of Object Cathexes
+                </a>
+                <div class="article-description">
+                    Ascribing metaphysical origins to the mistaking of our desire for isolated qualities of objects used in their representation with our desire for the objects as sensuous phenomena themselves.
+                </div>
+            </div>
+            <div class="article-item">
+                <a href="https://samuelschapiro.substack.com/p/ego-equilibration-theory-friendship" class="article-title">
+                    Ego Equilibration Theory: Friendship
+                </a>
+                <div class="article-description">
+                    An exploration of friendship through the lens of ego equilibration theory.
+                </div>
+            </div>
+</div>
+            
         <h2>Startups</h2>
         <div class="work-item">
             <a href="https://www.spiralworks.ai"><img src="https://media.licdn.com/dms/image/D560BAQHULbbyrogEPg/company-logo_200_200/0/1682563021125/spiral_works_logo?e=1731542400&v=beta&t=pFK1d2RW5fCoihTlOC3HGcO9eqmwe3ms-sHEACh5wfY" alt="Company Logo"></a>

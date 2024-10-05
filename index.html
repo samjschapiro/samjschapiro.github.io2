@@ -227,34 +227,7 @@
         <h2>Philosophy, Metaphysics, and Theoretical Psychology</h2>
         <div id="recent-articles">
         </div>
-        
-        <h2>Startups</h2>
-        <div class="work-item">
-            <a href="https://www.spiralworks.ai"><img src="https://media.licdn.com/dms/image/D560BAQHULbbyrogEPg/company-logo_200_200/0/1682563021125/spiral_works_logo?e=1731542400&v=beta&t=pFK1d2RW5fCoihTlOC3HGcO9eqmwe3ms-sHEACh5wfY" alt="Company Logo"></a>
-            <span class="work-title">Spiral Works</span>
-            <div class="work-role">Founding Research Scientist</div>
-            <div class="work-role">2024-</div>
-        </div>
-        <div class="work-item">
-            <a href="http://www.nephramed.wordpress.com"><img src="images/mqvd5tv8nuq406ia2q6j.webp" alt="Company Logo"></a>
-            <span class="work-title">Nephra</span>
-            <div class="work-role">Co-Founder</div>
-            <div class="work-role">2021-2022</div>
-        </div>
-        <div class="work-item">
-            <a href="https://www.quantillinois.com"><img src="images/quantillinois_logo.jpeg" alt="Company Logo"></a>
-            <span class="work-title">Quant</span>
-            <div class="work-role">Co-Founder</div>
-            <div class="work-role">2021-2023</div>
-        </div>
-                    
-        <h1>Other</h1>
-        <p>In my free time, I enjoy <a href="bookshelf.html">reading</a>, playing the piano, weightlifting, sprinting, and listening to Mozart.</p>
-    </main>
-
-
-    
-    <script>
+            <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             console.log('DOM fully loaded and parsed');        
             async function fetchRecentArticles() {
@@ -275,7 +248,7 @@
                         throw new Error("No articles found in the response");
                     }
         
-                    const articles = data.items.slice(0, 5); // Get the 5 most recent articles
+                    const articles = data.items.slice(0, 3); // Get the 5 most recent articles
         
                     const articlesContainer = document.getElementById('recent-articles');
                     if (!articlesContainer) {
@@ -308,6 +281,34 @@
             // Call fetchRecentArticles immediately
             fetchRecentArticles();
     </script>
+        
+        <h2>Startups</h2>
+        <div class="work-item">
+            <a href="https://www.spiralworks.ai"><img src="https://media.licdn.com/dms/image/D560BAQHULbbyrogEPg/company-logo_200_200/0/1682563021125/spiral_works_logo?e=1731542400&v=beta&t=pFK1d2RW5fCoihTlOC3HGcO9eqmwe3ms-sHEACh5wfY" alt="Company Logo"></a>
+            <span class="work-title">Spiral Works</span>
+            <div class="work-role">Founding Research Scientist</div>
+            <div class="work-role">2024-</div>
+        </div>
+        <div class="work-item">
+            <a href="http://www.nephramed.wordpress.com"><img src="images/mqvd5tv8nuq406ia2q6j.webp" alt="Company Logo"></a>
+            <span class="work-title">Nephra</span>
+            <div class="work-role">Co-Founder</div>
+            <div class="work-role">2021-2022</div>
+        </div>
+        <div class="work-item">
+            <a href="https://www.quantillinois.com"><img src="images/quantillinois_logo.jpeg" alt="Company Logo"></a>
+            <span class="work-title">Quant</span>
+            <div class="work-role">Co-Founder</div>
+            <div class="work-role">2021-2023</div>
+        </div>
+                    
+        <h1>Other</h1>
+        <p>In my free time, I enjoy <a href="bookshelf.html">reading</a>, playing the piano, weightlifting, sprinting, and listening to Mozart.</p>
+    </main>
+
+
+    
+
 </body>
 </html>
 

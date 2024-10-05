@@ -233,7 +233,8 @@
             async function fetchRecentArticles() {
                 console.log("fetchRecentArticles function called");
                 const substackUsername = 'samuelschapiro';
-                const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=https://${substackUsername}.substack.com/feed`;
+                const apiUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(`https://${substackUsername}.substack.com/feed`)}`;
+
         
                 try {
                     console.log("Fetching articles from:", apiUrl);

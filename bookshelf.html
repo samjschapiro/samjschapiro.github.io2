@@ -59,6 +59,22 @@
             margin: 5px 0;
             color: #666;
         }
+        /* Display books side by side on larger screens */
+        @media (min-width: 768px) {
+            .book {
+                flex-direction: row;
+            }
+        }
+        /* Stack books vertically on smaller screens */
+        @media (max-width: 767px) {
+            .book {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .book img {
+                margin-bottom: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -89,7 +105,6 @@
                         <p>In Progress</p>
                     </div>
                 </div>
-                </div>
 
                 <div class="book">
                     <img src="https://m.media-amazon.com/images/I/51f6vAE6rVL._AC_UF1000,1000_QL80_.jpg" alt="Principles of Genetic Epistemology">
@@ -114,146 +129,6 @@
                     <div>
                         <h3>Computational Philosophy of Science</h3>
                         <p>Paul Thagard</p>
-                        <p>Read in 2024</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- General Philosophy -->
-            <div class="category">
-                <h2>Philosophy of Morality, Culture, and Ethics</h2>
-
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/81pjGZRGaeL._AC_UY436_FMwebp_QL65_.jpg" alt="Genealogy of Morals">
-                    <div>
-                        <h3>On the Genealogy of Morality</h3>
-                        <p>Friedrich Nietzsche</p>
-                        <p>Read in 2024</p>
-                    </div>
-                </div>
-
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/41szolWxmgL._SY580_.jpg" alt="Beyond Good and Evil">
-                    <div>
-                        <h3>Beyond Good and Evil</h3>
-                        <p>Friedrich Nietzsche</p>
-                        <p>Read in 2024</p>
-                    </div>
-                </div>
-                
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/61K0H9NMqDL._AC_UF1000,1000_QL80_.jpg" alt="Civilization and its Discontents">
-                    <div>
-                        <h3>Civilization and its Discontents</h3>
-                        <p>Sigmund Freud</p>
-                        <p>Read in 2024</p>
-                    </div>
-                </div>
-
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/716huk49RJL._AC_UY436_FMwebp_QL65_.jpg" alt="Gay Science">
-                    <div>
-                        <h3>The Gay Science</h3>
-                        <p>Friedrich Nietzsche</p>
-                        <p>Read in 2024</p>
-                    </div>
-                </div>
-
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/51AdOCIDPjL._SY445_SX342_.jpg" alt="Twilight of the Idols">
-                    <div>
-                        <h3>Twilight of the Idols</h3>
-                        <p>Friedrich Nietzsche</p>
-                        <p>Read in 2024</p>
-                    </div>
-                </div>
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/61MAIDlBseL._AC_UF1000,1000_QL80_.jpg" alt="Human, All Too Human">
-                    <div>
-                        <h3>Human, All Too Human</h3>
-                        <p>Friedrich Nietzsche</p>
-                        <p>In Progress</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Theoretical Psychology -->
-            <div class="category">
-                <h2>Theoretical Psychology</h2>
-
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/71H17eYwwTL._AC_UF1000,1000_QL80_.jpg" alt="Group Psychology and Analysis of the Ego">
-                    <div>
-                        <h3>Group Psychology and Analysis of the Ego</h3>
-                        <p>Sigmund Freud</p>
-                        <p>Read in 2024</p>
-                    </div>
-                </div>
-
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/71kasdYij8L._AC_UF1000,1000_QL80_.jpg" alt="Psychology of the Unconscious">
-                    <div>
-                        <h3>Psychology of the Unconscious</h3>
-                        <p>Carl Jung</p>
-                        <p>Read in 2024</p>
-                    </div>
-                </div>
-
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/61qJ0faL5-L._AC_UF1000,1000_QL80_.jpg" alt="A Theory of Human Motivation">
-                    <div>
-                        <h3>A Theory of Human Motivation</h3>
-                        <p>Abraham Maslow</p>
-                        <p>Read in 2024</p>
-                    </div>
-                </div>
-
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/61DvlUS31dL._AC_UF1000,1000_QL80_.jpg" alt="The Ego and the Id">
-                    <div>
-                        <h3>The Ego and the Id</h3>
-                        <p>Sigmund Freud</p>
-                        <p>Read in 2024</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Creativity -->
-            <div class="category">
-                <h2>Creativity</h2>
-
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/61TQujsAmUL._AC_UF1000,1000_QL80_.jpg" alt="Creativity in Science">
-                    <div>
-                        <h3>Creativity in Science: Chance, Logic, Genius, and Zeitgeist</h3>
-                        <p>Dean Keith Simonton</p>
-                        <p>Read in 2024</p>
-                    </div>
-                </div>
-
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/71+Ta7tEZ+L._AC_UF1000,1000_QL80_.jpg" alt="The Act of Creation: Book 1">
-                    <div>
-                        <h3>The Act of Creation: Book 1</h3>
-                        <p>Arthur Koestler</p>
-                        <p>Read in 2024</p>
-                    </div>
-                </div>
-
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/61QQPLJp42L._AC_UF1000,1000_QL80_.jpg" alt="The Creative Mind: Myths and Mechanisms">
-                    <div>
-                        <h3>The Creative Mind: Myths and Mechanisms</h3>
-                        <p>Margaret A. Boden</p>
-                        <p>Read in 2024</p>
-                    </div>
-                </div>
-
-                <div class="book">
-                    <img src="https://m.media-amazon.com/images/I/51TousZd87L._AC_UF1000,1000_QL80_.jpg" alt="Flight From Wonder">
-                    <div>
-                        <h3>Flight From Wonder: An Investigation into Scientific Creativity</h3>
-                        <p>Albert Rothenberg</p>
                         <p>Read in 2024</p>
                     </div>
                 </div>

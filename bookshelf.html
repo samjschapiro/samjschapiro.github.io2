@@ -5,80 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sam's Bookshelf</title>
     <style>
-        /* General styling */
+        /* Reset and Box Sizing */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+        
+        /* Base Styling */
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #e9ecef;
-            color: #212529;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-        }
-        h1, h2 {
-            text-align: center;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #f5f5f5, #e1e1e1);
             color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            padding: 25px;
+            transition: transform 0.2s ease-in-out;
+        }
+        
+        .container:hover {
+            transform: scale(1.01);
+        }
+        
+        /* Header */
+        h1 {
+            text-align: center;
+            color: #4b4b4b;
+            font-size: 2.2rem;
+            font-weight: 400;
             margin-bottom: 10px;
         }
+        
         .quote {
             text-align: center;
             font-style: italic;
-            color: #6c757d;
-            margin: 10px 0 30px;
+            color: #888;
             font-size: 1.1rem;
+            margin-bottom: 30px;
         }
+
+        /* Bookshelf and Categories */
         .bookshelf {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 35px;
         }
+
         .category h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #ced4da;
+            font-size: 1.6rem;
+            color: #5b5b5b;
+            border-bottom: 2px solid #dcdcdc;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
         }
+
+        /* Book Styling */
         .book {
             display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 15px 0;
-            border-bottom: 1px solid #dee2e6;
-        }
-        .book img {
-            width: 100px;
-            height: auto;
-            border-radius: 6px;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            transition: background-color 0.3s;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+        .book:hover {
+            background-color: #fafafa;
+        }
+
+        .book img {
+            width: 90px;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .book:hover img {
+            transform: scale(1.05);
+        }
+
         .book h3 {
-            font-size: 1.2rem;
-            color: #495057;
-            margin-bottom: 4px;
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 5px;
         }
+
         .book p {
-            color: #868e96;
+            color: #777;
+            font-size: 0.95rem;
             margin: 0;
-            font-size: 0.9rem;
         }
-        /* Accessibility & Responsive Styling */
-        .quote, .bookshelf, .category h2, .book h3 {
-            font-weight: 400;
-        }
+
+        /* Responsive Styling */
         @media (max-width: 600px) {
             .container {
-                padding: 15px;
+                padding: 20px;
             }
             .book {
                 flex-direction: column;
@@ -97,7 +133,7 @@
         <p class="quote">"Pour inventer, il faut penser à côté."</p>
 
         <div class="bookshelf" id="bookshelf">
-            <!-- Metaphysics -->
+            <!-- Metaphysics Category -->
             <div class="category">
                 <h2>Metaphysics</h2>
                 <div class="book">
@@ -117,7 +153,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Philosophy of Science and Epistemology -->
+            <!-- Philosophy of Science and Epistemology Category -->
             <div class="category">
                 <h2>Philosophy of Science and Epistemology</h2>
                 <div class="book">
@@ -128,17 +164,9 @@
                         <p>Read in 2024</p>
                     </div>
                 </div>
-                <!-- Add remaining books here as needed -->
+                <!-- Add more books as needed -->
             </div>
         </div>
     </div>
-
-    <!-- Optional JavaScript for Interactive Features -->
-    <script>
-        // Placeholder for filtering/search functionality
-        document.addEventListener("DOMContentLoaded", function () {
-            console.log("DOM fully loaded and parsed. Ready to add interactive features.");
-        });
-    </script>
 </body>
 </html>

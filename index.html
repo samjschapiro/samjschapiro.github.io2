@@ -259,7 +259,7 @@
 <script>
     async function fetchSubstackPosts() {
         const substackRSSFeed = 'https://samuelschapiro.substack.com/feed'; // Replace with your Substack RSS feed URL
-
+        
         try {
             // Fetch the RSS feed and convert it to JSON
             const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(substackRSSFeed)}`);
@@ -269,19 +269,15 @@
                 const selectEssaysSection = document.querySelector('.select-essays');
 
                 // Loop through the first 5 items
-                for (const post of data.items.slice(0, 5)) {
+                data.items.slice(0, 5).forEach(post => {
                     const article = document.createElement('div');
                     article.className = 'article-item';
 
-                    // Fetch the HTML of the post to get the social preview image
-                    const postResponse = await fetch(post.link);
-                    const postHTML = await postResponse.text();
-
-                    // Parse the HTML to extract the <meta property="og:image"> tag
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(postHTML, 'text/html');
-                    const metaImage = doc.querySelector('meta[property="og:image"]');
-                    const imageURL = metaImage ? metaImage.content : 'https://via.placeholder.com/150'; // Default placeholder
+                    // Extract the first image from the content field
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = post.content; // The content field contains the preview HTML
+                    const firstImage = tempDiv.querySelector('img');
+                    const imageURL = firstImage ? firstImage.src : 'https://via.placeholder.com/150'; // Default placeholder
 
                     article.innerHTML = `
                         <div style="display: flex; align-items: center; margin-bottom: 20px;">
@@ -293,7 +289,7 @@
                         </div>
                     `;
                     selectEssaysSection.appendChild(article);
-                }
+                });
             } else {
                 console.error('No posts found.');
             }
@@ -303,7 +299,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', fetchSubstackPosts);
-</script>
+</script
     </main>
 </body>
 </html>

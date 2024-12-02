@@ -259,26 +259,33 @@
 
 <script>
     async function fetchSubstackPosts() {
-        const substackRSSFeed = 'https://samuelschapiro.substack.com/feed'; // Replace with your Substack RSS feed URL
+        const substackRSSFeed = 'https://samuelschapiro.substack.com/feed'; // Replace with your RSS feed URL
+        
         try {
+            // Fetch the RSS feed and convert it to JSON
             const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(substackRSSFeed)}`);
             const data = await response.json();
 
             if (data && data.items) {
                 const selectEssaysSection = document.querySelector('.select-essays');
 
-                data.items.slice(0, 5).forEach(post => {
+                // Loop through the first 5 items
+                for (const post of data.items.slice(0, 5)) {
                     const article = document.createElement('div');
                     article.className = 'article-item';
 
-                    // Extract the first image from the content if available
-                    const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = post.content;
-                    const firstImage = tempDiv.querySelector('img');
-                    const imageURL = firstImage ? firstImage.src : 'https://via.placeholder.com/150'; // Default placeholder
+                    // Fetch the HTML page for the post to extract images
+                    const postResponse = await fetch(post.link);
+                    const postHTML = await postResponse.text();
+
+                    // Parse the HTML to find the first image
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(postHTML, 'text/html');
+                    const firstImage = doc.querySelector('img'); // Finds the first <img> in the post
+                    const imageURL = firstImage ? firstImage.src : 'https://via.placeholder.com/150'; // Default if no image is found
 
                     article.innerHTML = `
-                        <div style="display: flex; align-items: center;">
+                        <div style="display: flex; align-items: center; margin-bottom: 20px;">
                             <img src="${imageURL}" alt="${post.title}" style="width: 100px; height: 100px; object-fit: cover; margin-right: 15px; border-radius: 5px;">
                             <div>
                                 <a href="${post.link}" class="article-title" target="_blank">${post.title}</a>
@@ -287,7 +294,7 @@
                         </div>
                     `;
                     selectEssaysSection.appendChild(article);
-                });
+                }
             } else {
                 console.error('No posts found.');
             }

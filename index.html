@@ -201,11 +201,6 @@
             
         <p>During my undergrad in CS at UIUC, I have been fortunate to study <b>transfer learning</b> and <b>deep learning theory</b> with the brilliant <a href="https://hanzhaoml.github.io">Han Zhao</a> and 
             the glorious <a href="https://arindam.cs.illinois.edu">Arindam Banerjee</a>. I like to <a href="bookshelf.html">read</a> and <a href="https://samuelschapiro.substack.com/">write</a>.</p>
-
-
-        <h1>Reading Groups</h1>
-        <p>Fall 2024: <a href="https://sites.google.com/berkeley.edu/generalization-phil-and-psych/">Philosophy and Psychology of Generalization and Creativity</a></p>
-        <p>Starting 2025: <a href="https://spiralworks.ai/#/reading-group">Algorithmic and Theoretical Foundations of Creativity</a>.</p>
         
         <h1>Research</h1>
         <h2>Computational Creativity</h2>
@@ -223,7 +218,43 @@
             <u>Samuel Schapiro,</u> Erin Zhang, Han Zhao, Arindam Banerjee <br>
             <i>Princeton Workshop on Optimization, Learning, and Control 2024</i></p>
 
-        <h1>Philosophy Essays</h1>
+        <h1>Select Essays</h1>
+        <div class="select-essays">
+            <!-- Substack posts will be dynamically added here -->
+        </div>
+        
+        <h1>Reading Groups</h1>
+        <p>Fall 2024: <a href="https://sites.google.com/berkeley.edu/generalization-phil-and-psych/">Philosophy and Psychology of Generalization and Creativity</a></p>
+        <p>Starting 2025: <a href="https://spiralworks.ai/#/reading-group">Algorithmic and Theoretical Foundations of Creativity</a>.</p>
+
+        <script>
+    async function fetchSubstackPosts() {
+        const substackRSSFeed = 'https://samuelschapiro.substack.com/feed'; // Replace with your Substack RSS feed URL
+        try {
+            const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(substackRSSFeed)}`);
+            const data = await response.json();
+            
+            if (data && data.items) {
+                const selectEssaysSection = document.querySelector('.select-essays');
+                data.items.slice(0, 5).forEach(post => {
+                    const article = document.createElement('div');
+                    article.className = 'article-item';
+                    article.innerHTML = `
+                        <a href="${post.link}" class="article-title" target="_blank">${post.title}</a>
+                        <p class="article-description">${post.description || 'No description available.'}</p>
+                    `;
+                    selectEssaysSection.appendChild(article);
+                });
+            } else {
+                console.error('No posts found.');
+            }
+        } catch (error) {
+            console.error('Failed to fetch Substack posts:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchSubstackPosts);
+</script>
     </main>
 </body>
 </html>

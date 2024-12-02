@@ -13,6 +13,36 @@
             margin: 0 auto;
             padding: 20px;
         }
+        .article-item {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        }
+        
+        .article-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+        
+        .article-title {
+            font-weight: bold;
+            color: #444;
+            text-decoration: none;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            display: block;
+        }
+        
+        .article-description {
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
         .header-container {
         display: flex;
         justify-content: space-between;
@@ -227,21 +257,29 @@
         <p>Fall 2024: <a href="https://sites.google.com/berkeley.edu/generalization-phil-and-psych/">Philosophy and Psychology of Generalization and Creativity</a></p>
         <p>Starting 2025: <a href="https://spiralworks.ai/#/reading-group">Algorithmic and Theoretical Foundations of Creativity</a>.</p>
 
-        <script>
+     <script>
     async function fetchSubstackPosts() {
         const substackRSSFeed = 'https://samuelschapiro.substack.com/feed'; // Replace with your Substack RSS feed URL
         try {
             const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(substackRSSFeed)}`);
             const data = await response.json();
-            
+
             if (data && data.items) {
                 const selectEssaysSection = document.querySelector('.select-essays');
                 data.items.slice(0, 5).forEach(post => {
                     const article = document.createElement('div');
                     article.className = 'article-item';
+
+                    const imageURL = post.thumbnail || 'https://via.placeholder.com/150'; // Default placeholder if no thumbnail is available
+
                     article.innerHTML = `
-                        <a href="${post.link}" class="article-title" target="_blank">${post.title}</a>
-                        <p class="article-description">${post.description || 'No description available.'}</p>
+                        <div style="display: flex; align-items: center;">
+                            <img src="${imageURL}" alt="${post.title}" style="width: 100px; height: 100px; object-fit: cover; margin-right: 15px; border-radius: 5px;">
+                            <div>
+                                <a href="${post.link}" class="article-title" target="_blank">${post.title}</a>
+                                <p class="article-description">${post.description || 'No description available.'}</p>
+                            </div>
+                        </div>
                     `;
                     selectEssaysSection.appendChild(article);
                 });

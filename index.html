@@ -276,7 +276,7 @@
                     // Extract the first image from the content field
                     const tempDiv = document.createElement('div');
                     tempDiv.innerHTML = post.content; // The content field contains the preview HTML
-                    const firstImage = tempDiv.querySelector('img');
+                    const firstImage = tempDiv.querySelector('og:img');
                     const imageURL = firstImage ? firstImage.src : 'https://via.placeholder.com/150'; // Default placeholder
 
                     article.innerHTML = `

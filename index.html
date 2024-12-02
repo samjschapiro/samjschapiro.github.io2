@@ -257,7 +257,7 @@
         <p>Fall 2024: <a href="https://sites.google.com/berkeley.edu/generalization-phil-and-psych/">Philosophy and Psychology of Generalization and Creativity</a></p>
         <p>Starting 2025: <a href="https://spiralworks.ai/#/reading-group">Algorithmic and Theoretical Foundations of Creativity</a>.</p>
 
-     <script>
+<script>
     async function fetchSubstackPosts() {
         const substackRSSFeed = 'https://samuelschapiro.substack.com/feed'; // Replace with your Substack RSS feed URL
         try {
@@ -266,11 +266,16 @@
 
             if (data && data.items) {
                 const selectEssaysSection = document.querySelector('.select-essays');
+
                 data.items.slice(0, 5).forEach(post => {
                     const article = document.createElement('div');
                     article.className = 'article-item';
 
-                    const imageURL = post.thumbnail || 'https://via.placeholder.com/150'; // Default placeholder if no thumbnail is available
+                    // Extract the first image from the content if available
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = post.content;
+                    const firstImage = tempDiv.querySelector('img');
+                    const imageURL = firstImage ? firstImage.src : 'https://via.placeholder.com/150'; // Default placeholder
 
                     article.innerHTML = `
                         <div style="display: flex; align-items: center;">

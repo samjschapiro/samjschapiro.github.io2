@@ -6,8 +6,12 @@
     <title>Samuel Schapiro - Personal Website</title>
     <style>
        /* Global Styles */
+/* Import the new font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Global Styles */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif; /* Change font to Inter */
     line-height: 1.6;
     color: #333;
     max-width: 800px;
@@ -15,6 +19,33 @@ body {
     padding: 20px;
     background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
     animation: fadeIn 1s ease-in-out;
+}
+
+/* Header Text */
+.header-text h1 {
+    font-size: 2.5em;
+    font-weight: 600; /* Use a bold but clean weight */
+    color: #444;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 500; /* Slightly lighter for section titles */
+    color: #444;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+p {
+    font-size: 1.1em;
+    font-weight: 300; /* Light font weight for sleekness */
+    color: #555; /* Slightly softer color for text */
+}
+
+.contact-icons a {
+    font-weight: 400; /* Medium weight for icons/text links */
 }
 
 /* Animations */
@@ -43,12 +74,6 @@ body {
     align-items: center;
     margin-bottom: 40px;
     padding-top: 50px;
-}
-
-.header-text h1 {
-    font-size: 2.5em;
-    color: #444;
-    margin: 0;
 }
 
 .location {
@@ -88,14 +113,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Section Titles */
-h2 {
-    font-size: 1.8em;
-    color: #444;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    position: relative;
-}
+
 
 h2::after {
     content: '';

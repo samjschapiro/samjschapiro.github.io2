@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuel Schapiro - Personal Website</title>
   <style>
-      /* Import Scholarly Fonts */
+/* Import Scholarly Fonts */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Roboto+Slab:wght@400;500&display=swap');
 
 /* Global Styles */
@@ -23,7 +23,7 @@ body {
 
 /* Global Link Styling */
 a {
-    color: #5a3e2b; /* Deep earthy brown for links */
+    color: #6a503e; /* Lighter earthy brown for easier visibility */
     text-decoration: none;
     border-bottom: 1px solid transparent; /* Subtle underline effect */
     transition: color 0.3s ease, border-bottom 0.3s ease;
@@ -31,7 +31,7 @@ a {
 
 a:hover {
     color: #382719; /* Darker brown on hover */
-    border-bottom: 1px solid #382719; /* Underline on hover */
+    border-bottom: 1px solid #382719; /* Underline effect */
 }
 
 /* Header Section */
@@ -41,6 +41,13 @@ a:hover {
     margin-bottom: 40px;
     border-radius: 8px; /* Gentle rounding */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft depth */
+    display: flex; /* Flexbox for layout adjustment */
+    align-items: center; /* Center align vertically */
+    justify-content: space-between; /* Space between name/logos and photo */
+}
+
+.header-text {
+    flex: 1; /* Take up remaining space */
 }
 
 .header-text h1 {
@@ -57,6 +64,26 @@ a:hover {
     font-size: 1em;
     color: #6d645b; /* Muted brown-gray */
     margin-top: 5px;
+}
+
+.photo-of-JP {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px; /* Rounded edges */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-of-JP img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure proper scaling */
+}
+
+.photo-of-JP:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Section Headers */
@@ -97,7 +124,7 @@ p {
     color: #5a3e2b;
     border-radius: 50%;
     text-align: center;
-    line-height: 40px;
+    line-height: 40px; /* Vertically center text */
     margin-right: 10px;
     transition: background 0.3s ease, transform 0.2s ease;
 }
@@ -105,7 +132,7 @@ p {
 .contact-icons a:hover {
     background: #5a3e2b;
     color: #fff;
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Subtle lift effect */
 }
 
 /* Cards for Research/Philosophical Work */

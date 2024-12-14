@@ -147,7 +147,54 @@
         .research-item a:hover {
             color: #0056b3;
         }
-   
+   /* Global Link Styles */
+    a {
+        color: #007bff; /* Professional and clean blue tone */
+        text-decoration: none; /* Remove underlines for modern look */
+        font-weight: 500; /* Medium weight for better visibility */
+        transition: color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    }
+    
+    a:hover {
+        color: #0056b3; /* Darker blue for hover state */
+        text-decoration: underline; /* Subtle underline for emphasis */
+        box-shadow: 0 2px 0 #0056b3; /* Add a hover effect with shadow */
+    }
+    
+    /* Contact Icons */
+    .contact-icons a {
+        display: inline-flex; /* Ensure consistent alignment of icons */
+        align-items: center;
+        justify-content: center;
+        width: 40px; /* Uniform size for clickable icons */
+        height: 40px;
+        background-color: #f0f0f0; /* Light background for icon area */
+        border-radius: 50%; /* Circular icon area for modern feel */
+        color: #007bff; /* Blue icon color */
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
+    }
+    
+    .contact-icons a:hover {
+        background-color: #e6f0ff; /* Subtle blue tint on hover */
+        color: #0056b3; /* Darker blue for hover */
+        transform: translateY(-2px); /* Subtle lift effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    }
+    
+    /* Research Section Links */
+    .research-item a {
+        color: #007bff; /* Blue for research links */
+        text-decoration: none; /* No underline */
+        font-weight: 500; /* Slightly bold for visibility */
+        position: relative; /* Position for hover effects */
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+    
+    .research-item a:hover {
+        color: #0056b3; /* Darker blue for hover */
+        text-decoration: none; /* Maintain no underline */
+        border-bottom: 2px solid #0056b3; /* Underline effect for hover */
+    }
     </style>
 </head>
 <body>

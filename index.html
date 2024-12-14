@@ -5,105 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuel Schapiro - Personal Website</title>
     <style>
-   /* Global Styles */
+        /* Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 body {
-    font-family: 'Inter', sans-serif; /* Retain clean and professional font */
-    line-height: 1.8; /* Improved readability */
-    color: #222; /* Slightly darker text for better contrast */
-    max-width: 900px; /* Increased width for a more spacious layout */
-    margin: 20px auto; /* Add vertical margin for better centering */
-    padding: 25px; /* Larger padding for a more balanced feel */
-    background: linear-gradient(135deg, #f9f9ff, #e6f7ff); /* Softer gradient */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for polish */
-    border-radius: 10px; /* Rounded corners for modernity */
-    animation: fadeIn 1s ease-in-out;
+    font-family: 'Inter', sans-serif; /* Professional and clean font */
+    line-height: 1.7; /* Enhanced readability */
+    color: #333; /* Neutral dark gray for text */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px; /* Slightly larger padding for balance */
+    background-color: #ffffff; /* Clean white background */
+    border: 1px solid #e6e6e6; /* Light border for subtle framing */
+    border-radius: 8px; /* Rounded edges for modern look */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 /* Header Text */
 .header-text h1 {
-    font-size: 3em; /* Larger, prominent header font size */
-    font-weight: 700; /* Strong emphasis */
-    color: #333; /* Darker header text for better visibility */
-    margin-bottom: 10px; /* Add spacing for balance */
+    font-size: 2.8em; /* Emphasize the main header */
+    font-weight: 700; /* Bold for prominence */
+    color: #2c3e50; /* Sophisticated dark blue-gray */
+    margin: 0;
+    text-align: center; /* Center-align for a formal header */
 }
 
 h2 {
-    font-size: 2em; /* Slightly larger for stronger section emphasis */
-    font-weight: 600; /* Bolder weight for clarity */
-    color: #2c3e50; /* Professional blue-gray color */
-    margin-top: 50px; /* Increase vertical spacing for cleaner separation */
-    margin-bottom: 25px; 
-    text-transform: uppercase; /* Formal styling for section titles */
-    letter-spacing: 1px; /* Improve readability */
+    font-size: 1.8em; /* Subtle increase for emphasis */
+    font-weight: 600; /* Stronger weight for headings */
+    color: #2c3e50; /* Unified heading color */
+    margin-top: 50px;
+    margin-bottom: 15px;
     position: relative;
+    text-transform: none; /* Keep natural casing for modern design */
 }
 
 p {
-    font-size: 1.15em; /* Slightly larger font size */
-    font-weight: 400; /* Standard weight for readability */
-    color: #444; /* Neutral gray for text */
-    margin-bottom: 20px; /* Larger spacing between paragraphs */
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px); /* Subtle slide-in effect */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    font-size: 1.1em;
+    font-weight: 400; /* Standard weight for paragraphs */
+    color: #555; /* Softer gray for body text */
+    margin-bottom: 18px; /* Increase spacing for readability */
+    text-align: justify; /* Justified text for cleaner paragraphs */
 }
 
 /* Header Container */
 .header-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 50px; /* Increase spacing for better layout */
-    padding-top: 40px; /* Slightly reduced top padding */
+    flex-direction: column; /* Stack header items vertically */
+    align-items: center; /* Center-align all items */
+    margin-bottom: 40px;
 }
 
 .location {
-    color: #555; /* Softer gray for better integration */
-    margin-top: 5px;
-    margin-bottom: 15px;
+    color: #888; /* Subtle gray for secondary information */
+    margin-top: 10px;
+    font-style: italic; /* Add a modern italic touch */
 }
 
 /* Contact Icons */
 .contact-icons {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center; /* Center-align icons */
+    margin-top: 15px;
+    gap: 20px; /* Use `gap` for better spacing between icons */
 }
 
 .contact-icons a {
-    margin-right: 15px; /* Spacing between icons */
     text-decoration: none;
-    color: #444; /* Neutral gray for link text */
-    transition: transform 0.3s ease, color 0.3s ease;
+    color: #444; /* Neutral icon color */
+    transition: transform 0.2s ease, color 0.3s ease;
 }
 
 .contact-icons a:hover {
-    color: #007bff; /* Highlighted blue for hover */
-    transform: scale(1.2); /* Subtle enlargement */
+    transform: scale(1.2); /* Slightly larger on hover */
+    color: #007bff; /* Theme blue for hover state */
 }
 
 /* Profile Image */
 .photo-of-JP {
-    width: 120px; /* Larger image for more prominence */
+    width: 120px; /* Slightly larger image */
     height: 120px;
     border-radius: 50%;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.photo-of-JP:hover {
-    transform: scale(1.15); /* Stronger zoom effect on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 20px;
 }
 
 .photo-of-JP img {
@@ -116,30 +102,48 @@ p {
 h2::after {
     content: '';
     display: block;
-    width: 70px; /* Longer separator line */
-    height: 4px; /* Slightly thicker for emphasis */
-    background: #007bff; /* Consistent theme color */
-    margin-top: 10px;
-    border-radius: 2px; /* Rounded for a clean look */
+    width: 60px; /* Adjusted length for subtlety */
+    height: 3px;
+    background: #007bff; /* Consistent blue theme */
+    margin-top: 8px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Research Section */
 .research-item {
-    margin-bottom: 25px; /* Increase spacing for clarity */
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ccc; /* Softer divider color */
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e6e6e6; /* Light divider for visual separation */
+}
+
+.research-item:last-child {
+    border-bottom: none;
 }
 
 .research-item a {
-    color: #0056b3; /* Slightly darker professional blue */
+    color: #007bff;
     text-decoration: none;
-    font-weight: 500; /* Bold links for emphasis */
+    font-weight: 500; /* Slightly bold for visibility */
     transition: color 0.3s ease;
 }
 
 .research-item a:hover {
-    color: #003f7f; /* Darker hover color for engagement */
+    color: #0056b3; /* Darker blue on hover for contrast */
 }
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Subtle slide-up effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+   
     </style>
 </head>
 <body>

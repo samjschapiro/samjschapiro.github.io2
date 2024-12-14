@@ -5,210 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuel Schapiro - Personal Website</title>
   <style>
-       /* Global Styles */
-    /* Import the new font */
-/* Global Styles */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Source+Serif+Pro:wght@300;400;600&display=swap');
+      /* Import Scholarly Fonts */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Roboto+Slab:wght@400;500&display=swap');
 
+/* Global Styles */
 body {
-    font-family: 'Source Serif Pro', serif; /* Serif font for elegance */
-    line-height: 1.75; /* Comfortable reading */
-    color: #2c2c2c; /* Rich dark gray for text */
-    background: #f8f5f2; /* Soft parchment-like background */
+    font-family: 'Roboto Slab', serif; /* Elegant yet modern serif */
+    line-height: 1.75;
+    color: #2c2c2c; /* Rich, dark gray for text */
+    background: #fefdfb; /* Soft cream background */
     max-width: 850px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ded9d3; /* Subtle framing for content */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Gentle shadow for depth */
+    border: 1px solid #e6e0d5; /* Subtle antique border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Gentle shadow for depth */
 }
 
 /* Global Link Styling */
 a {
-    color: #8b4513; /* Warm, antique brown for links */
-    text-decoration: none; /* Clean links */
+    color: #5a3e2b; /* Deep earthy brown for links */
+    text-decoration: none;
     border-bottom: 1px solid transparent; /* Subtle underline effect */
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 a:hover {
-    color: #5a3410; /* Darker brown on hover */
-    border-bottom: 1px solid #5a3410; /* Underline effect */
+    color: #382719; /* Darker brown on hover */
+    border-bottom: 1px solid #382719; /* Underline on hover */
 }
 
 /* Header Section */
 .header-container {
-    background: #f4efe8; /* Soft antique white */
+    background: #f9f7f3; /* Subtle, antique-inspired background */
     padding: 20px;
     margin-bottom: 40px;
-    border-radius: 8px; /* Rounded corners for softness */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Gentle rounding */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft depth */
 }
 
 .header-text h1 {
-    font-family: 'EB Garamond', serif; /* Classic serif for elegance */
+    font-family: 'EB Garamond', serif; /* Scholarly serif for emphasis */
     font-size: 2.8em;
-    font-weight: 700;
-    color: #4c3f36; /* Rich brown for the header */
-    margin: 0;
+    font-weight: 600;
+    color: #2c2c2c; /* Neutral dark gray */
+    margin-bottom: 10px;
+    letter-spacing: 0.5px; /* Elegant spacing */
 }
 
 .location {
-    font-family: 'Source Serif Pro', serif; /* Secondary serif */
+    font-family: 'Roboto Slab', serif; /* Modern serif contrast */
     font-size: 1em;
-    color: #6d645b; /* Muted gray-brown for secondary text */
+    color: #6d645b; /* Muted brown-gray */
     margin-top: 5px;
 }
 
-/* Bio Section */
-.bio-section {
-    font-family: 'EB Garamond', serif; /* Scholarly serif */
-    background: #f9f6f2; /* Parchment-inspired background */
-    border: 1px solid #d6d0c4; /* Subtle border for framing */
-    padding: 30px;
-    margin-bottom: 40px;
-    color: #3a3a3a; /* Soft dark gray for text */
-}
-
-.bio-section h1 {
-    font-size: 2.5em;
-    font-weight: 700;
-    color: #4c3f36;
+/* Section Headers */
+h2 {
+    font-family: 'EB Garamond', serif; /* Serif for classical feel */
+    font-size: 2em;
+    font-weight: 600;
+    color: #5a3e2b; /* Earthy brown */
     margin-bottom: 20px;
+    position: relative;
 }
 
-.bio-section p {
-    font-size: 1.15em;
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #5a3e2b;
+    margin-top: 10px;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 1.2em;
+    font-family: 'Roboto Slab', serif;
     line-height: 1.85;
-    color: #2c2c2c; /* Slightly darker for body text */
+    color: #333333;
     margin-bottom: 20px;
-    text-align: justify; /* Clean block alignment */
+    text-align: justify;
 }
 
+/* Contact Icons */
 .contact-icons a {
     display: inline-block;
-    margin-right: 10px;
     width: 40px;
     height: 40px;
-    line-height: 40px;
+    background: #f0ece8;
+    color: #5a3e2b;
+    border-radius: 50%;
     text-align: center;
-    background: #e9e4dc; /* Neutral background for icons */
-    color: #4c3f36; /* Matching the theme */
-    border-radius: 50%; /* Circular icons */
-    transition: transform 0.3s ease, background 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    line-height: 40px;
+    margin-right: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .contact-icons a:hover {
-    background: #8b4513; /* Warm antique brown for hover */
-    color: #fff; /* White text for contrast */
+    background: #5a3e2b;
+    color: #fff;
     transform: translateY(-2px);
 }
 
-/* Research Section */
-.research-section {
-    font-family: 'EB Garamond', serif; /* Academic serif */
-    background: #f5f2ed; /* Light, neutral background */
+/* Cards for Research/Philosophical Work */
+.card {
+    background: #f9f6f1; /* Subtle neutral background */
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #e6e0d5;
     border-radius: 8px;
-    padding: 30px;
-    margin-bottom: 40px;
-    color: #3a3a3a;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-.research-section h1 {
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #4c3f36;
-    margin-bottom: 20px;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.research-section h2 {
-    font-size: 1.8em;
-    color: #2c2c2c;
-    font-weight: 500;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #8b4513; /* Antique brown underline */
-    display: inline-block;
-}
-
-.research-item {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #d6d0c4;
-}
-
-.research-item:last-child {
-    border-bottom: none;
-}
-
-.research-item a {
-    color: #8b4513;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-}
-
-.research-item a:hover {
-    color: #5a3410;
-    border-bottom: 1px solid #5a3410;
-}
-
-/* Philosophical Work Section */
-.philosophical-work-section {
+.card h3 {
+    font-size: 1.5em;
     font-family: 'EB Garamond', serif;
-    background: #ece8e1; /* Aged paper look */
+    color: #5a3e2b;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1.1em;
     color: #2c2c2c;
-    padding: 30px;
-    margin-bottom: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow for mood */
-}
-
-.philosophical-work-section h1 {
-    font-size: 2.8em;
-    font-weight: bold;
-    color: #4c3f36;
-    margin-bottom: 20px;
-}
-
-.philosophical-work-section p {
-    font-size: 1.2em;
-    line-height: 1.85;
-    color: #2c2c2c;
-    margin-bottom: 20px;
-}
-
-.philosophical-work-section a {
-    color: #8b4513;
-    text-decoration: none;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-}
-
-.philosophical-work-section a:hover {
-    color: #5a3410;
-    border-bottom: 1px solid #5a3410;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    line-height: 1.8;
 }
 
 /* Footer */
 .footer {
     font-size: 0.9em;
-    color: #6d645b; /* Muted brown-gray */
-    margin-top: 30px;
+    color: #6d645b;
+    margin-top: 40px;
     text-align: center;
     padding: 10px;
-    border-top: 1px solid #d6d0c4; /* Subtle divider */
+    border-top: 1px solid #e6e0d5;
 }
     </style>
 </head>

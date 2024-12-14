@@ -4,176 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuel Schapiro - Personal Website</title>
-   <style>
-     /* Global Styles */
-    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Roboto+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+  <style>
+       /* Global Styles */
+    /* Import the new font */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     
-    /* General Body Styling */
-body {
-    font-family: 'Source Serif Pro', serif; /* Base font for an elegant yet professional feel */
-    line-height: 1.8;
-    color: #2c3e50; /* Sophisticated blue-gray */
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fefefe; /* Neutral background */
-}
+    /* Global Styles */
+    body {
+        font-family: 'Inter', sans-serif; /* Change font to Inter */
+        line-height: 1.6;
+        color: #333;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
+        animation: fadeIn 1s ease-in-out;
+    }
+    
+    /* Header Text */
+    .header-text h1 {
+        font-size: 2.5em;
+        font-weight: 600; /* Use a bold but clean weight */
+        color: #444;
+        margin: 0;
+    }
+    
+    h2 {
+        font-size: 1.8em;
+        font-weight: 500; /* Slightly lighter for section titles */
+        color: #444;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    
+    p {
+        font-size: 1.1em;
+        font-weight: 300; /* Light font weight for sleekness */
+        color: #555; /* Slightly softer color for text */
+    }
+    
+    .contact-icons a {
+        font-weight: 400; /* Medium weight for icons/text links */
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+    
+    /* Header Styles */
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        padding-top: 50px;
+    }
+    
+    .location {
+        color: #666;
+        margin-top: 5px; /* Adjust vertical spacing above */
+        margin-bottom: 15px; /* Add space between location and icons */
+    }
+    
+    .contact-icons {
+        margin-top: 10px; /* Ensure some spacing above the icons */
+        margin-bottom: 20px; /* Optional: Extra spacing below the icons */
+    }
+    
+    .contact-icons a {
+        margin-right: 15px; /* Space between icons */
+        text-decoration: none;
+        color: #444;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+    
+    .photo-of-JP {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    
+    .photo-of-JP img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .photo-of-JP:hover {
+        transform: scale(1.1);
+    }
+    
+    h2::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: #007bff;
+        margin-top: 10px;
+    }
+    
+    p {
+        margin-bottom: 15px;
+        font-size: 1.1em;
+    }
+    
+    /* Research Section */
+    .research-item {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .research-item:last-child {
+        border-bottom: none;
+    }
+    
+    .research-item a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .research-item a:hover {
+        color: #0056b3;
+    }
+   /* Global Link Styles */
+    a {
+        color: #007bff; /* Professional and clean blue tone */
+        text-decoration: none; /* Remove underlines for modern look */
+        font-weight: 500; /* Medium weight for better visibility */
+        transition: color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    }
+    
+    a:hover {
+        color: #0056b3; /* Darker blue for hover state */
+        text-decoration: underline; /* Subtle underline for emphasis */
+        box-shadow: 0 2px 0 #0056b3; /* Add a hover effect with shadow */
+    }
 
-/* Global Link Styling */
-a {
-    color: #0073e6; /* Polished blue */
-    text-decoration: none;
-    border-bottom: 1px solid transparent; /* Subtle underline effect */
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-}
-
-a:hover {
-    color: #004a99; /* Darker hover effect */
-    border-bottom: 1px solid #004a99; /* Underline on hover */
-}
-
-/* ---------- BIO SECTION: US Revolution, Declaration of Independence, Entrepreneurship ---------- */
-.bio-section {
-    font-family: 'Libre Baskerville', serif; /* Historical serif for the bio section */
-    background: linear-gradient(135deg, #faf7f0, #fff5eb); /* Subtle parchment-inspired background */
-    color: #2a2a2a; /* Deep gray-black for a formal tone */
-    border: 2px solid #d4af91; /* Gold border for a classic touch */
-    border-radius: 10px; /* Smooth edges for elegance */
-    padding: 30px;
-    margin-bottom: 40px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-}
-
-.bio-section h1 {
-    font-size: 3em;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #1a1a1a;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.bio-section p {
-    font-size: 1.15em;
-    color: #3a3a3a;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-.bio-section .contact-icons a {
-    display: inline-block;
-    margin-right: 10px;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    background: #e8e8e8; /* Light background for neutrality */
-    color: #1a1a1a; /* Neutral icon color */
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-.bio-section .contact-icons a:hover {
-    background: #0073e6; /* Highlight blue for hover */
-    color: #fff; /* White text for contrast */
-    transform: translateY(-2px);
-}
-
-/* ---------- RESEARCH SECTION: Science and Math ---------- */
-.research-section {
-    font-family: 'Roboto Mono', monospace; /* Technical monospace font for precision */
-    background: linear-gradient(135deg, #f8f9fa, #ffffff); /* Clean white gradient */
-    color: #333333;
-    border: 1px solid #dfe4ea; /* Subtle border */
-    border-radius: 8px;
-    padding: 30px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
-}
-
-.research-section h1 {
-    font-size: 2.8em;
-    font-weight: 600;
-    text-align: center;
-    color: #1a1a1a;
-    margin-bottom: 30px;
-}
-
-.research-section h2 {
-    font-size: 1.5em;
-    font-weight: 500;
-    margin-top: 30px;
-    color: #2c3e50;
-    border-bottom: 2px dashed #dfe4ea; /* Dashed underline for structure */
-    display: inline-block;
-}
-
-.research-section p {
-    font-size: 1.1em;
-    color: #4b4b4b;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-.research-item {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px dashed #cccccc;
-}
-
-.research-item:last-child {
-    border-bottom: none;
-}
-
-.research-item a {
-    color: #0073e6; /* Clean blue for links */
-    text-decoration: none;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-}
-
-.research-item a:hover {
-    color: #004a99;
-    border-bottom: 1px solid #004a99; /* Subtle underline on hover */
-}
-
-/* ---------- PHILOSOPHICAL WORK SECTION: Dark Academia ---------- */
-.philosophical-work-section {
-    font-family: 'EB Garamond', serif; /* Classic serif for academia */
-    background: #1e1e1e; /* Dark, moody background */
-    color: #f4f4f4; /* Light text for contrast */
-    border-radius: 6px;
-    padding: 30px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow for mood */
-}
-
-.philosophical-work-section h1 {
-    font-size: 2.8em;
-    font-weight: bold;
-    color: #d4af91; /* Gold for prestige */
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.philosophical-work-section p {
-    font-size: 1.15em;
-    color: #f4f4f4;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-.philosophical-work-section a {
-    color: #d4af91; /* Gold for links */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.philosophical-work-section a:hover {
-    color: #f5dba3; /* Lighter gold on hover */
-    border-bottom: 1px solid #f5dba3;
-}
+    /* Contact Icons */
+    .contact-icons a {
+        display: inline-flex; /* Ensure consistent alignment of icons */
+        align-items: center;
+        justify-content: center;
+        width: 40px; /* Uniform size for clickable icons */
+        height: 40px;
+        background-color: #f0f0f0; /* Light background for icon area */
+        border-radius: 50%; /* Circular icon area for modern feel */
+        color: #007bff; /* Blue icon color */
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
+    }
+    
+    .contact-icons a:hover {
+        background-color: #e6f0ff; /* Subtle blue tint on hover */
+        color: #0056b3; /* Darker blue for hover */
+        transform: translateY(-2px); /* Subtle lift effect */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    }
+    
+    /* Research Section Links */
+    .research-item a {
+        color: #007bff; /* Blue for research links */
+        text-decoration: none; /* No underline */
+        font-weight: 500; /* Slightly bold for visibility */
+        position: relative; /* Position for hover effects */
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+    
+    .research-item a:hover {
+        color: #0056b3; /* Darker blue for hover */
+        text-decoration: none; /* Maintain no underline */
+        border-bottom: 2px solid #0056b3; /* Underline effect for hover */
+    }
     </style>
 </head>
 <body>

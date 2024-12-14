@@ -4,174 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuel Schapiro - Personal Website</title>
-  <style>
-/* Import Scholarly Fonts */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Roboto+Slab:wght@400;500&display=swap');
+ <style>
+       /* Global Styles */
+/* Import the new font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* Global Styles */
 body {
-    font-family: 'Roboto Slab', serif; /* Elegant yet modern serif */
-    line-height: 1.75;
-    color: #2c2c2c; /* Rich, dark gray for text */
-    background: #fefdfb; /* Soft cream background */
-    max-width: 850px;
+    font-family: 'Inter', sans-serif; /* Change font to Inter */
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #e6e0d5; /* Subtle antique border */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Gentle shadow for depth */
+    background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* Global Link Styling */
-a {
-    color: #6a503e; /* Lighter earthy brown for easier visibility */
-    text-decoration: none;
-    border-bottom: 1px solid transparent; /* Subtle underline effect */
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-}
-
-a:hover {
-    color: #382719; /* Darker brown on hover */
-    border-bottom: 1px solid #382719; /* Underline effect */
-}
-
-/* Header Section */
-.header-container {
-    background: #f9f7f3; /* Subtle, antique-inspired background */
-    padding: 20px;
-    margin-bottom: 40px;
-    border-radius: 8px; /* Gentle rounding */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft depth */
-    display: flex; /* Flexbox for layout adjustment */
-    align-items: center; /* Center align vertically */
-    justify-content: space-between; /* Space between name/logos and photo */
-}
-
-.header-text {
-    flex: 1; /* Take up remaining space */
-}
-
+/* Header Text */
 .header-text h1 {
-    font-family: 'EB Garamond', serif; /* Scholarly serif for emphasis */
-    font-size: 2.8em;
-    font-weight: 600;
-    color: #2c2c2c; /* Neutral dark gray */
-    margin-bottom: 10px;
-    letter-spacing: 0.5px; /* Elegant spacing */
+    font-size: 2.5em;
+    font-weight: 600; /* Use a bold but clean weight */
+    color: #444;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 500; /* Slightly lighter for section titles */
+    color: #444;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+p {
+    font-size: 1.1em;
+    font-weight: 300; /* Light font weight for sleekness */
+    color: #555; /* Slightly softer color for text */
+}
+
+.contact-icons a {
+    font-weight: 400; /* Medium weight for icons/text links */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Header Styles */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-top: 50px;
 }
 
 .location {
-    font-family: 'Roboto Slab', serif; /* Modern serif contrast */
-    font-size: 1em;
-    color: #6d645b; /* Muted brown-gray */
-    margin-top: 5px;
+    color: #666;
+    margin-top: 5px; /* Adjust vertical spacing above */
+    margin-bottom: 15px; /* Add space between location and icons */
+}
+
+.contact-icons {
+    margin-top: 10px; /* Ensure some spacing above the icons */
+    margin-bottom: 20px; /* Optional: Extra spacing below the icons */
+}
+
+.contact-icons a {
+    margin-right: 15px; /* Space between icons */
+    text-decoration: none;
+    color: #444;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .photo-of-JP {
     width: 100px;
     height: 100px;
-    border-radius: 15px; /* Rounded edges */
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .photo-of-JP img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure proper scaling */
+    object-fit: cover;
 }
 
 .photo-of-JP:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Section Headers */
-h2 {
-    font-family: 'EB Garamond', serif; /* Serif for classical feel */
-    font-size: 2em;
-    font-weight: 600;
-    color: #5a3e2b; /* Earthy brown */
-    margin-bottom: 20px;
-    position: relative;
+    transform: scale(1.1);
 }
 
 h2::after {
     content: '';
     display: block;
-    width: 60px;
+    width: 50px;
     height: 3px;
-    background: #5a3e2b;
+    background: #007bff;
     margin-top: 10px;
 }
 
-/* Paragraph Styling */
 p {
-    font-size: 1.2em;
-    font-family: 'Roboto Slab', serif;
-    line-height: 1.85;
-    color: #333333;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-/* Contact Icons */
-.contact-icons a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: #f0ece8;
-    color: #5a3e2b;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 40px; /* Vertically center text */
-    margin-right: 10px;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.contact-icons a:hover {
-    background: #5a3e2b;
-    color: #fff;
-    transform: translateY(-2px); /* Subtle lift effect */
-}
-
-/* Cards for Research/Philosophical Work */
-.card {
-    background: #f9f6f1; /* Subtle neutral background */
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #e6e0d5;
-    border-radius: 8px;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.card h3 {
-    font-size: 1.5em;
-    font-family: 'EB Garamond', serif;
-    color: #5a3e2b;
-    margin-bottom: 10px;
-}
-
-.card p {
+    margin-bottom: 15px;
     font-size: 1.1em;
-    color: #2c2c2c;
-    line-height: 1.8;
 }
 
-/* Footer */
-.footer {
-    font-size: 0.9em;
-    color: #6d645b;
-    margin-top: 40px;
-    text-align: center;
-    padding: 10px;
-    border-top: 1px solid #e6e0d5;
+/* Research Section */
+.research-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
 }
+
+.research-item:last-child {
+    border-bottom: none;
+}
+
+.research-item a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.research-item a:hover {
+    color: #0056b3;
+}
+   
     </style>
 </head>
 <body>

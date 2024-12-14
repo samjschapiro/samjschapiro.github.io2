@@ -5,56 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuel Schapiro - Personal Website</title>
     <style>
-       /* Global Styles */
-/* Import the new font */
+    /* Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Global Styles */
 body {
-    font-family: 'Inter', sans-serif; /* Change font to Inter */
-    line-height: 1.6;
-    color: #333;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
-    animation: fadeIn 1s ease-in-out;
+    font-family: 'Inter', sans-serif; /* Clean and professional font */
+    line-height: 1.7; /* Better readability */
+    color: #333; /* Neutral, easy-to-read text color */
+    max-width: 900px; /* Slightly wider layout for modern design */
+    margin: 20px auto; /* Add top and bottom margins for spacing */
+    padding: 25px; /* Increased padding for a balanced layout */
+    background: linear-gradient(135deg, #ffffff, #f8f9fa); /* Subtle gradient for sleekness */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 /* Header Text */
 .header-text h1 {
-    font-size: 2.5em;
-    font-weight: 600; /* Use a bold but clean weight */
-    color: #444;
-    margin: 0;
+    font-size: 3em; /* Larger and more prominent */
+    font-weight: 700; /* Strong weight for emphasis */
+    color: #2c3e50; /* Sophisticated dark blue-gray */
+    margin: 0 0 10px 0; /* Add bottom margin for separation */
+    text-align: center; /* Center-align for balance */
 }
 
 h2 {
-    font-size: 1.8em;
-    font-weight: 500; /* Slightly lighter for section titles */
-    color: #444;
-    margin-top: 40px;
+    font-size: 2em; /* Larger and more defined section headers */
+    font-weight: 600; /* Stronger emphasis */
+    color: #2c3e50; /* Consistent dark blue-gray color */
+    margin-top: 50px;
     margin-bottom: 20px;
     position: relative;
+    text-transform: capitalize; /* Keep clean and modern */
+    letter-spacing: 0.5px; /* Subtle spacing for sophistication */
 }
 
 p {
-    font-size: 1.1em;
-    font-weight: 300; /* Light font weight for sleekness */
-    color: #555; /* Slightly softer color for text */
-}
-
-.contact-icons a {
-    font-weight: 400; /* Medium weight for icons/text links */
+    font-size: 1.15em; /* Slightly larger text */
+    font-weight: 400; /* Standard weight for readability */
+    color: #555; /* Softer gray for text */
+    margin-bottom: 20px; /* Increased spacing for balance */
+    text-align: justify; /* Clean block alignment */
 }
 
 /* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(20px); /* Subtle slide-in effect */
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -63,44 +66,52 @@ p {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-8px); /* Reduced bounce for a cleaner look */
     }
 }
 
 /* Header Styles */
 .header-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Stack items for a modern design */
+    align-items: center; /* Center-align all items */
     margin-bottom: 40px;
-    padding-top: 50px;
 }
 
 .location {
-    color: #666;
-    margin-top: 5px; /* Adjust vertical spacing above */
-    margin-bottom: 15px; /* Add space between location and icons */
+    color: #777; /* Softer gray for secondary text */
+    margin-top: 10px;
+    font-size: 0.9em; /* Subtle size for supporting information */
 }
 
+/* Contact Icons */
 .contact-icons {
-    margin-top: 10px; /* Ensure some spacing above the icons */
-    margin-bottom: 20px; /* Optional: Extra spacing below the icons */
+    display: flex;
+    justify-content: center; /* Center-align icons */
+    margin-top: 15px;
+    gap: 15px; /* Space between icons */
 }
 
 .contact-icons a {
-    margin-right: 15px; /* Space between icons */
     text-decoration: none;
-    color: #444;
+    color: #444; /* Neutral color for icons */
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.contact-icons a:hover {
+    transform: scale(1.2); /* Subtle enlargement for hover */
+    color: #007bff; /* Blue theme for hover state */
+}
+
+/* Profile Image */
 .photo-of-JP {
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
+    width: 110px; /* Slightly larger size */
+    height: 110px;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    margin-top: 15px; /* Space from header text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .photo-of-JP img {
@@ -110,44 +121,42 @@ p {
 }
 
 .photo-of-JP:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Smooth zoom-in effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
+/* Section Separator */
 h2::after {
     content: '';
     display: block;
-    width: 50px;
-    height: 3px;
-    background: #007bff;
-    margin-top: 10px;
-}
-
-p {
-    margin-bottom: 15px;
-    font-size: 1.1em;
+    width: 60px; /* Slightly longer separator */
+    height: 4px; /* Thicker line for definition */
+    background: #007bff; /* Consistent theme color */
+    margin: 10px auto 0 auto; /* Center the line */
+    border-radius: 2px; /* Rounded edges for sleekness */
 }
 
 /* Research Section */
 .research-item {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #ddd;
+    margin-bottom: 25px; /* More spacing between items */
+    padding-bottom: 20px; /* Increased padding for a balanced layout */
+    border-bottom: 1px solid #ddd; /* Clean, light divider */
 }
 
 .research-item:last-child {
-    border-bottom: none;
+    border-bottom: none; /* No border for last item */
 }
 
 .research-item a {
-    color: #007bff;
+    color: #007bff; /* Blue for links */
     text-decoration: none;
+    font-weight: 500; /* Slightly bold links */
     transition: color 0.3s ease;
 }
 
 .research-item a:hover {
-    color: #0056b3;
+    color: #0056b3; /* Darker blue on hover */
 }
-   
     </style>
 </head>
 <body>

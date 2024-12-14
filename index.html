@@ -5,174 +5,185 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samuel Schapiro - Personal Website</title>
    <style>
-       /* Global Styles */
-    /* Import the new font */
-    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Source+Code+Pro:wght@400;500&display=swap');
+     /* Global Styles */
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Roboto+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap');
     
-body {
-    font-family: 'EB Garamond', serif; /* Classic serif for traditional and academic feel */
-    line-height: 1.8; /* Comfortable readability */
-    color: #2c3e50; /* Sophisticated dark blue-gray */
-    max-width: 850px; /* Slightly wider for balance */
-    margin: 30px auto;
-    padding: 30px;
-    background: #fefefe; /* Subtle paper-like white */
-    border: 1px solid #d4af91; /* Gold-tinted border for timeless elegance */
-    border-radius: 12px; /* Rounded edges for modern touch */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* Header Text */
-.header-text h1 {
-    font-family: 'EB Garamond', serif; /* Scholarly serif for a timeless header */
-    font-size: 3.5em; /* Larger for grandeur */
-    font-weight: 700; /* Strong emphasis */
-    color: #1a1a1a; /* Deep black for gravitas */
-    margin: 0 0 15px 0;
-    text-align: center;
-    text-transform: uppercase; /* Formal and striking */
-    letter-spacing: 1.5px; /* Subtle spacing for classic feel */
-}
-
-h2 {
-    font-family: 'EB Garamond', serif; /* Serif for elegant headers */
-    font-size: 2em; /* Larger, balanced */
-    font-weight: 500; /* Strong but not overbearing */
-    color: #1a1a1a;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    text-transform: capitalize; /* Natural casing */
-    letter-spacing: 0.8px; /* Subtle spacing for gravitas */
-    border-bottom: 2px solid #d4af91; /* Gold-tinted underline for section separation */
-    display: inline-block;
-}
-
-/* Paragraph Text */
-p {
-    font-family: 'Source Code Pro', monospace; /* Modern coding font for intellectual vibe */
-    font-size: 1.15em; /* Balanced size */
-    font-weight: 400; /* Regular weight for readability */
-    color: #2f3e46; /* Muted gray-blue for calmness */
-    margin-bottom: 20px;
-    text-align: justify; /* Clean block alignment */
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    /* General Body Styling */
+    body {
+        font-family: 'Source Sans Pro', sans-serif; /* Clean, modern sans-serif for base */
+        line-height: 1.8; /* Comfortable spacing */
+        color: #2c3e50; /* Sophisticated dark blue-gray */
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 900px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    
+    /* Global Link Styling */
+    a {
+        color: #0077cc; /* Polished blue */
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid transparent; /* Subtle underline effect */
+        transition: color 0.3s ease, border-bottom 0.3s ease;
     }
-}
-
-/* Header Container */
-.header-container {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center;
-    margin-bottom: 40px;
-    text-align: center; /* Center-align header for balance */
-}
-
-/* Location */
-.location {
-    font-family: 'EB Garamond', serif; /* Serif for a traditional look */
-    color: #636363; /* Subtle gray for secondary text */
-    margin-top: 10px;
-    font-size: 1em; /* Smaller for emphasis on header */
-    font-style: italic; /* Scholarly and poetic */
-}
-
-/* Contact Icons */
-.contact-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 20px; /* Space between icons */
-}
-
-.contact-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background-color: #fafafa; /* Paper-like background */
-    border: 2px solid #636363; /* Subtle border for elegance */
-    border-radius: 50%; /* Circular icons for modernity */
-    color: #2c3e50; /* Dark blue-gray */
-    font-size: 1.2em;
-    transition: all 0.3s ease;
-}
-
-.contact-icons a:hover {
-    background-color: #d4af91; /* Gold highlight for prestige */
-    color: #ffffff; /* White icon on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-}
-
-/* Profile Image */
-.photo-of-JP {
-    width: 140px; /* Slightly larger for prominence */
-    height: 140px;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    margin-top: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.photo-of-JP img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.photo-of-JP:hover {
-    transform: scale(1.1); /* Slight zoom effect */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-}
-
-/* Section Separator */
-h2::after {
-    content: '';
-    display: block;
-    width: 100px; /* Long separator for academic feel */
-    height: 4px;
-    background: #d4af91; /* Gold accent */
-    margin: 10px auto 0 auto; /* Center-align the line */
-    border-radius: 2px; /* Rounded edges */
-}
-
-/* Research Section */
-.research-item {
-    margin-bottom: 25px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eaeaea; /* Light divider for separation */
-}
-
-.research-item:last-child {
-    border-bottom: none;
-}
-
-.research-item a {
-    font-family: 'Source Code Pro', monospace; /* Intellectual monospace for research links */
-    color: #2a6496; /* Deep academic blue */
-    text-decoration: none; /* No underline */
-    font-weight: 500;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-}
-
-.research-item a:hover {
-    color: #1c3d5a; /* Darker hover color for contrast */
-    border-bottom: 2px solid #1c3d5a; /* Subtle underline effect */
-}
+    
+    a:hover {
+        color: #0056b3; /* Darker hover color */
+        border-bottom: 1px solid #0056b3; /* Underline on hover */
+    }
+    
+    /* ---------- BIO SECTION: US Revolution, Declaration of Independence, Silicon Valley ---------- */
+    .bio-section {
+        font-family: 'EB Garamond', serif; /* Classic serif font */
+        background: linear-gradient(135deg, #fffbe7, #f2ece3); /* Subtle parchment-like background */
+        color: #1a1a1a; /* Deep black for historical feel */
+        border: 2px solid #d4af91; /* Gold-tinted border for elegance */
+        border-radius: 8px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+    
+    .bio-section h1 {
+        font-size: 2.8em;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        color: #333333; /* Strong but balanced color */
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+    
+    .bio-section p {
+        font-family: 'Source Sans Pro', sans-serif; /* Modern sans-serif for accessibility */
+        font-size: 1.2em;
+        line-height: 1.85;
+        color: #2c3e50;
+        text-align: justify; /* Balanced paragraph alignment */
+    }
+    
+    .bio-section h2 {
+        font-family: 'EB Garamond', serif; /* Elegant serif for headers */
+        font-size: 2em;
+        color: #2b2b2b; /* Dark neutral color */
+        border-bottom: 2px solid #d4af91; /* Gold-tinted underline */
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+    
+    .bio-section .contact-icons a {
+        display: inline-block;
+        margin-right: 10px;
+        color: #2b2b2b; /* Neutral gray */
+        font-size: 1.2em;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+    
+    .bio-section .contact-icons a:hover {
+        transform: scale(1.1);
+        color: #0077cc; /* Polished blue for hover */
+    }
+    
+    /* ---------- RESEARCH SECTION: Science and Math Theme ---------- */
+    .research-section {
+        font-family: 'Roboto Mono', monospace; /* Technical monospace font */
+        background: linear-gradient(135deg, #f8f9fa, #ffffff); /* Clean and structured */
+        border: 1px solid #e0e0e0; /* Light border for clarity */
+        border-radius: 6px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    }
+    
+    .research-section h1 {
+        font-size: 2.5em;
+        font-weight: 500;
+        color: #333333;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+    
+    .research-section p {
+        font-size: 1.1em;
+        color: #4b4b4b;
+        line-height: 1.75;
+        text-align: justify;
+        margin-bottom: 15px;
+    }
+    
+    .research-section h2 {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1.8em;
+        color: #2c3e50; /* Deep blue-gray for emphasis */
+        text-transform: capitalize;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+    
+    .research-item {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px dashed #cccccc; /* Dashed line for a technical vibe */
+    }
+    
+    .research-item a {
+        font-weight: 600;
+        color: #0077cc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .research-item a:hover {
+        color: #0056b3;
+    }
+    
+    /* ---------- PHILOSOPHICAL WORK SECTION: Dark Academia Theme ---------- */
+    .philosophical-work-section {
+        font-family: 'EB Garamond', serif; /* Classic serif font for academia */
+        background: #2c2c2c; /* Dark academia aesthetic */
+        color: #eaeaea; /* Light text for contrast */
+        border-radius: 6px;
+        padding: 30px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow for drama */
+    }
+    
+    .philosophical-work-section h1 {
+        font-size: 2.8em;
+        font-weight: 700;
+        color: #d4af91; /* Gold for prestige */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .philosophical-work-section p {
+        font-size: 1.15em;
+        color: #eaeaea;
+        line-height: 1.8;
+        margin-bottom: 15px;
+        text-align: justify;
+    }
+    
+    .philosophical-work-section h2 {
+        font-size: 2em;
+        font-weight: 600;
+        color: #d4af91;
+        border-bottom: 1px solid #444444; /* Subtle separator */
+        margin-bottom: 20px;
+    }
+    
+    .philosophical-work-section a {
+        color: #d4af91;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+    
+    .philosophical-work-section a:hover {
+        color: #f5dba3; /* Lighter gold on hover */
+        border-bottom: 1px solid #f5dba3;
+    }
     </style>
 </head>
 <body>
@@ -206,34 +217,39 @@ h2::after {
         </div>
     </header>
     <main>
-        <p>My name is Sam. I am studying the <b>science of intelligence</b> using mathematics, computer science, philosophy, and psychology</p>  
-            
-        <p>I am currently the founding research scientist of a multidisciplinary AI research lab called <a href="https://spiralworks.ai">Spiral Works</a>, working on <b>computational creativity</b> and other understudied aspects of intelligence. 
-            Previously, I was a visiting researcher at the Simons Institute for the Theory of Computing, UC Berkeley studying <a href="https://simons.berkeley.edu/programs/modern-paradigms-generalization">Modern Paradigms in Generalization</a>.
+        <section class="bio-section">
+            <p>My name is Sam. I am studying the <b>science of intelligence</b> using mathematics, computer science, philosophy, and psychology</p>  
+                
+            <p>I am currently the founding research scientist of a multidisciplinary AI research lab called <a href="https://spiralworks.ai">Spiral Works</a>, working on <b>computational creativity</b> and other understudied aspects of intelligence. 
+                Previously, I was a visiting researcher at the Simons Institute for the Theory of Computing, UC Berkeley studying <a href="https://simons.berkeley.edu/programs/modern-paradigms-generalization">Modern Paradigms in Generalization</a>.
+                </p>
+                
+            <p>During my undergrad in CS at UIUC, I have been fortunate to study <b>transfer learning</b> and <b>deep learning theory</b> with the brilliant <a href="https://hanzhaoml.github.io">Han Zhao</a> and 
+                the glorious <a href="https://arindam.cs.illinois.edu">Arindam Banerjee</a>. I like to <a href="bookshelf.html">read</a> and <a href="https://samuelschapiro.substack.com/">write</a>.</p>
+
+        </section>
+        <section class="research-section">
+            <h2>Research</h2>
+            <h3>Algorithmic and Theoretical Foundations of Creativity</h3>
+            <p>Theory for the Emergence of Creativity in Generative Models<br>
+                <u>Samuel Schapiro</u>, Royce Moon, Aishik Sanyal <br>
+                <i>Manuscript in Progress</i>
             </p>
-            
-        <p>During my undergrad in CS at UIUC, I have been fortunate to study <b>transfer learning</b> and <b>deep learning theory</b> with the brilliant <a href="https://hanzhaoml.github.io">Han Zhao</a> and 
-            the glorious <a href="https://arindam.cs.illinois.edu">Arindam Banerjee</a>. I like to <a href="bookshelf.html">read</a> and <a href="https://samuelschapiro.substack.com/">write</a>.</p>
+             <p><a href="files/A Mathematical Framework for Evaluating the Creativity of Ideas.pdf">A Mathematical Framework for Evaluating the Creativity of Ideas</a><br>
+                <u>Samuel Schapiro</u>, Royce Moon, Aishik Sanyal <br>
+            </p>
+    
+            <h3>Transfer Learning; Deep Learning Theory</h3>
+            <p><a href="https://arxiv.org/pdf/2412.05169">Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Out-of-Distribution Generalization</a><br>
+                <u>Samuel Schapiro,</u> Han Zhao<br>
+                Under Review at <i>Transactions on Machine Learning Research 2024</i>
+            </p>
+            <p>Sharpness-Aware Minimization: Feature Selection and Implicit Biases <br>
+                <u>Samuel Schapiro,</u> Erin Zhang, Han Zhao, Arindam Banerjee <br>
+                <i>Princeton Workshop on Optimization, Learning, and Control 2024</i></p>
+        </section>
         
-        <h2>Research</h2>
-        <h3>Algorithmic and Theoretical Foundations of Creativity</h3>
-        <p>Theory for the Emergence of Creativity in Generative Models<br>
-            <u>Samuel Schapiro</u>, Royce Moon, Aishik Sanyal <br>
-            <i>Manuscript in Progress</i>
-        </p>
-         <p><a href="files/A Mathematical Framework for Evaluating the Creativity of Ideas.pdf">A Mathematical Framework for Evaluating the Creativity of Ideas</a><br>
-            <u>Samuel Schapiro</u>, Royce Moon, Aishik Sanyal <br>
-        </p>
-
-        <h3>Transfer Learning; Deep Learning Theory</h3>
-        <p><a href="https://arxiv.org/pdf/2412.05169">Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Out-of-Distribution Generalization</a><br>
-            <u>Samuel Schapiro,</u> Han Zhao<br>
-            Under Review at <i>Transactions on Machine Learning Research 2024</i>
-        </p>
-        <p>Sharpness-Aware Minimization: Feature Selection and Implicit Biases <br>
-            <u>Samuel Schapiro,</u> Erin Zhang, Han Zhao, Arindam Banerjee <br>
-            <i>Princeton Workshop on Optimization, Learning, and Control 2024</i></p>
-
+        <section class="philosophical-work-section">
         <h2>Philosophical Work</h2>
         <div id="substack-feed-embed"></div>
 
@@ -245,6 +261,7 @@ h2::after {
           };
         </script>
         <script src="https://substackapi.com/embeds/feed.js" async></script>
+        </section>
         
         <h2>Reading Groups</h2>
         <p>Fall 2024: <a href="https://sites.google.com/berkeley.edu/generalization-phil-and-psych/">Philosophy and Psychology of Generalization and Creativity</a></p>

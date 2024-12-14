@@ -9,181 +9,171 @@
     @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Roboto+Mono:wght@400;500&family=Source+Sans+Pro:wght@300;400;600&display=swap');
     
     /* General Body Styling */
-    body {
-        font-family: 'Source Sans Pro', sans-serif; /* Clean, modern sans-serif for base */
-        line-height: 1.8; /* Comfortable spacing */
-        color: #2c3e50; /* Sophisticated dark blue-gray */
-        margin: 0 auto;
-        padding: 20px;
-        max-width: 900px;
-    }
-    
-    /* Global Link Styling */
-    a {
-        color: #0077cc; /* Polished blue */
-        text-decoration: none;
-        font-weight: 500;
-        border-bottom: 1px solid transparent; /* Subtle underline effect */
-        transition: color 0.3s ease, border-bottom 0.3s ease;
-    }
-    
-    a:hover {
-        color: #0056b3; /* Darker hover color */
-        border-bottom: 1px solid #0056b3; /* Underline on hover */
-    }
-    
-    /* ---------- BIO SECTION: US Revolution, Declaration of Independence, Silicon Valley ---------- */
-    .bio-section {
-        font-family: 'EB Garamond', serif; /* Classic serif font */
-        background: linear-gradient(135deg, #fffbe7, #f2ece3); /* Subtle parchment-like background */
-        color: #1a1a1a; /* Deep black for historical feel */
-        border: 2px solid #d4af91; /* Gold-tinted border for elegance */
-        border-radius: 8px;
-        padding: 30px;
-        margin-bottom: 40px;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    }
-    
-    .bio-section h1 {
-        font-size: 2.8em;
-        font-weight: 700;
-        text-transform: uppercase;
-        text-align: center;
-        color: #333333; /* Strong but balanced color */
-        letter-spacing: 1px;
-        margin-bottom: 20px;
-    }
-    
-    .bio-section p {
-        font-family: 'Source Sans Pro', sans-serif; /* Modern sans-serif for accessibility */
-        font-size: 1.2em;
-        line-height: 1.85;
-        color: #2c3e50;
-        text-align: justify; /* Balanced paragraph alignment */
-    }
-    
-    .bio-section h2 {
-        font-family: 'EB Garamond', serif; /* Elegant serif for headers */
-        font-size: 2em;
-        color: #2b2b2b; /* Dark neutral color */
-        border-bottom: 2px solid #d4af91; /* Gold-tinted underline */
-        display: inline-block;
-        margin-bottom: 20px;
-    }
-    
-    .bio-section .contact-icons a {
-        display: inline-block;
-        margin-right: 10px;
-        color: #2b2b2b; /* Neutral gray */
-        font-size: 1.2em;
-        transition: transform 0.3s ease, color 0.3s ease;
-    }
-    
-    .bio-section .contact-icons a:hover {
-        transform: scale(1.1);
-        color: #0077cc; /* Polished blue for hover */
-    }
-    
-    /* ---------- RESEARCH SECTION: Science and Math Theme ---------- */
-    .research-section {
-        font-family: 'Roboto Mono', monospace; /* Technical monospace font */
-        background: linear-gradient(135deg, #f8f9fa, #ffffff); /* Clean and structured */
-        border: 1px solid #e0e0e0; /* Light border for clarity */
-        border-radius: 6px;
-        padding: 30px;
-        margin-bottom: 40px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    }
-    
-    .research-section h1 {
-        font-size: 2.5em;
-        font-weight: 500;
-        color: #333333;
-        text-align: center;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-    }
-    
-    .research-section p {
-        font-size: 1.1em;
-        color: #4b4b4b;
-        line-height: 1.75;
-        text-align: justify;
-        margin-bottom: 15px;
-    }
-    
-    .research-section h2 {
-        font-family: 'Roboto Mono', monospace;
-        font-size: 1.8em;
-        color: #2c3e50; /* Deep blue-gray for emphasis */
-        text-transform: capitalize;
-        margin-top: 30px;
-        margin-bottom: 15px;
-    }
-    
-    .research-item {
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-        border-bottom: 1px dashed #cccccc; /* Dashed line for a technical vibe */
-    }
-    
-    .research-item a {
-        font-weight: 600;
-        color: #0077cc;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-    
-    .research-item a:hover {
-        color: #0056b3;
-    }
-    
-    /* ---------- PHILOSOPHICAL WORK SECTION: Dark Academia Theme ---------- */
-    .philosophical-work-section {
-        font-family: 'EB Garamond', serif; /* Classic serif font for academia */
-        background: #2c2c2c; /* Dark academia aesthetic */
-        color: #eaeaea; /* Light text for contrast */
-        border-radius: 6px;
-        padding: 30px;
-        margin-bottom: 40px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow for drama */
-    }
-    
-    .philosophical-work-section h1 {
-        font-size: 2.8em;
-        font-weight: 700;
-        color: #d4af91; /* Gold for prestige */
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    
-    .philosophical-work-section p {
-        font-size: 1.15em;
-        color: #eaeaea;
-        line-height: 1.8;
-        margin-bottom: 15px;
-        text-align: justify;
-    }
-    
-    .philosophical-work-section h2 {
-        font-size: 2em;
-        font-weight: 600;
-        color: #d4af91;
-        border-bottom: 1px solid #444444; /* Subtle separator */
-        margin-bottom: 20px;
-    }
-    
-    .philosophical-work-section a {
-        color: #d4af91;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s ease, border-bottom 0.3s ease;
-    }
-    
-    .philosophical-work-section a:hover {
-        color: #f5dba3; /* Lighter gold on hover */
-        border-bottom: 1px solid #f5dba3;
-    }
+body {
+    font-family: 'Source Serif Pro', serif; /* Base font for an elegant yet professional feel */
+    line-height: 1.8;
+    color: #2c3e50; /* Sophisticated blue-gray */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fefefe; /* Neutral background */
+}
+
+/* Global Link Styling */
+a {
+    color: #0073e6; /* Polished blue */
+    text-decoration: none;
+    border-bottom: 1px solid transparent; /* Subtle underline effect */
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+a:hover {
+    color: #004a99; /* Darker hover effect */
+    border-bottom: 1px solid #004a99; /* Underline on hover */
+}
+
+/* ---------- BIO SECTION: US Revolution, Declaration of Independence, Entrepreneurship ---------- */
+.bio-section {
+    font-family: 'Libre Baskerville', serif; /* Historical serif for the bio section */
+    background: linear-gradient(135deg, #faf7f0, #fff5eb); /* Subtle parchment-inspired background */
+    color: #2a2a2a; /* Deep gray-black for a formal tone */
+    border: 2px solid #d4af91; /* Gold border for a classic touch */
+    border-radius: 10px; /* Smooth edges for elegance */
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.bio-section h1 {
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.bio-section p {
+    font-size: 1.15em;
+    color: #3a3a3a;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.bio-section .contact-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #e8e8e8; /* Light background for neutrality */
+    color: #1a1a1a; /* Neutral icon color */
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.bio-section .contact-icons a:hover {
+    background: #0073e6; /* Highlight blue for hover */
+    color: #fff; /* White text for contrast */
+    transform: translateY(-2px);
+}
+
+/* ---------- RESEARCH SECTION: Science and Math ---------- */
+.research-section {
+    font-family: 'Roboto Mono', monospace; /* Technical monospace font for precision */
+    background: linear-gradient(135deg, #f8f9fa, #ffffff); /* Clean white gradient */
+    color: #333333;
+    border: 1px solid #dfe4ea; /* Subtle border */
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
+}
+
+.research-section h1 {
+    font-size: 2.8em;
+    font-weight: 600;
+    text-align: center;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+.research-section h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-top: 30px;
+    color: #2c3e50;
+    border-bottom: 2px dashed #dfe4ea; /* Dashed underline for structure */
+    display: inline-block;
+}
+
+.research-section p {
+    font-size: 1.1em;
+    color: #4b4b4b;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.research-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #cccccc;
+}
+
+.research-item:last-child {
+    border-bottom: none;
+}
+
+.research-item a {
+    color: #0073e6; /* Clean blue for links */
+    text-decoration: none;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.research-item a:hover {
+    color: #004a99;
+    border-bottom: 1px solid #004a99; /* Subtle underline on hover */
+}
+
+/* ---------- PHILOSOPHICAL WORK SECTION: Dark Academia ---------- */
+.philosophical-work-section {
+    font-family: 'EB Garamond', serif; /* Classic serif for academia */
+    background: #1e1e1e; /* Dark, moody background */
+    color: #f4f4f4; /* Light text for contrast */
+    border-radius: 6px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow for mood */
+}
+
+.philosophical-work-section h1 {
+    font-size: 2.8em;
+    font-weight: bold;
+    color: #d4af91; /* Gold for prestige */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.philosophical-work-section p {
+    font-size: 1.15em;
+    color: #f4f4f4;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.philosophical-work-section a {
+    color: #d4af91; /* Gold for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.philosophical-work-section a:hover {
+    color: #f5dba3; /* Lighter gold on hover */
+    border-bottom: 1px solid #f5dba3;
+}
     </style>
 </head>
 <body>

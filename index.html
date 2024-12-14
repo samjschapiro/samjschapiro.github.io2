@@ -7,194 +7,172 @@
    <style>
        /* Global Styles */
     /* Import the new font */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&family=Source+Code+Pro:wght@400;500&display=swap');
     
-    /* Global Styles */
-    body {
-        font-family: 'Inter', sans-serif; /* Change font to Inter */
-        line-height: 1.6;
-        color: #333;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
-        animation: fadeIn 1s ease-in-out;
-    }
-    
-    /* Header Text */
-    .header-text h1 {
-        font-size: 2.5em;
-        font-weight: 600; /* Use a bold but clean weight */
-        color: #444;
-        margin: 0;
-    }
-    
-    h2 {
-        font-size: 1.8em;
-        font-weight: 500; /* Slightly lighter for section titles */
-        color: #444;
-        margin-top: 40px;
-        margin-bottom: 20px;
-        position: relative;
-    }
-    
-    p {
-        font-size: 1.1em;
-        font-weight: 300; /* Light font weight for sleekness */
-        color: #555; /* Slightly softer color for text */
-    }
-    
-    .contact-icons a {
-        font-weight: 400; /* Medium weight for icons/text links */
-    }
-    
-    /* Animations */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-    
-    @keyframes bounce {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-10px);
-        }
-    }
-    
-    /* Header Styles */
-    .header-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 40px;
-        padding-top: 50px;
-    }
-    
-    .location {
-        color: #666;
-        margin-top: 5px; /* Adjust vertical spacing above */
-        margin-bottom: 15px; /* Add space between location and icons */
-    }
-    
-    .contact-icons {
-        margin-top: 10px; /* Ensure some spacing above the icons */
-        margin-bottom: 20px; /* Optional: Extra spacing below the icons */
-    }
-    
-    .contact-icons a {
-        margin-right: 15px; /* Space between icons */
-        text-decoration: none;
-        color: #444;
-        transition: transform 0.3s ease, color 0.3s ease;
-    }
-    
-    .photo-of-JP {
-        width: 100px;
-        height: 100px;
-        overflow: hidden;
-        border-radius: 50%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-    }
-    
-    .photo-of-JP img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .photo-of-JP:hover {
-        transform: scale(1.1);
-    }
-    
-    h2::after {
-        content: '';
-        display: block;
-        width: 50px;
-        height: 3px;
-        background: #007bff;
-        margin-top: 10px;
-    }
-    
-    p {
-        margin-bottom: 15px;
-        font-size: 1.1em;
-    }
-    
-    /* Research Section */
-    .research-item {
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-        border-bottom: 1px solid #ddd;
-    }
-    
-    .research-item:last-child {
-        border-bottom: none;
-    }
-    
-    .research-item a {
-        color: #007bff;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-    
-    .research-item a:hover {
-        color: #0056b3;
-    }
-   /* Global Link Styles */
-    a {
-        color: #007bff; /* Professional and clean blue tone */
-        text-decoration: none; /* Remove underlines for modern look */
-        font-weight: 500; /* Medium weight for better visibility */
-        transition: color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-    }
-    
-    a:hover {
-        color: #0056b3; /* Darker blue for hover state */
-        text-decoration: underline; /* Subtle underline for emphasis */
-        box-shadow: 0 2px 0 #0056b3; /* Add a hover effect with shadow */
-    }
+body {
+    font-family: 'EB Garamond', serif; /* Classic serif for traditional and academic feel */
+    line-height: 1.8; /* Comfortable readability */
+    color: #2c3e50; /* Sophisticated dark blue-gray */
+    max-width: 850px; /* Slightly wider for balance */
+    margin: 30px auto;
+    padding: 30px;
+    background: #fefefe; /* Subtle paper-like white */
+    border: 1px solid #d4af91; /* Gold-tinted border for timeless elegance */
+    border-radius: 12px; /* Rounded edges for modern touch */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    animation: fadeIn 1s ease-in-out;
+}
 
-    /* Contact Icons */
-    .contact-icons a {
-        display: inline-flex; /* Ensure consistent alignment of icons */
-        align-items: center;
-        justify-content: center;
-        width: 40px; /* Uniform size for clickable icons */
-        height: 40px;
-        background-color: #f0f0f0; /* Light background for icon area */
-        border-radius: 50%; /* Circular icon area for modern feel */
-        color: #007bff; /* Blue icon color */
-        transition: all 0.3s ease; /* Smooth transition for hover effects */
+/* Header Text */
+.header-text h1 {
+    font-family: 'EB Garamond', serif; /* Scholarly serif for a timeless header */
+    font-size: 3.5em; /* Larger for grandeur */
+    font-weight: 700; /* Strong emphasis */
+    color: #1a1a1a; /* Deep black for gravitas */
+    margin: 0 0 15px 0;
+    text-align: center;
+    text-transform: uppercase; /* Formal and striking */
+    letter-spacing: 1.5px; /* Subtle spacing for classic feel */
+}
+
+h2 {
+    font-family: 'EB Garamond', serif; /* Serif for elegant headers */
+    font-size: 2em; /* Larger, balanced */
+    font-weight: 500; /* Strong but not overbearing */
+    color: #1a1a1a;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-transform: capitalize; /* Natural casing */
+    letter-spacing: 0.8px; /* Subtle spacing for gravitas */
+    border-bottom: 2px solid #d4af91; /* Gold-tinted underline for section separation */
+    display: inline-block;
+}
+
+/* Paragraph Text */
+p {
+    font-family: 'Source Code Pro', monospace; /* Modern coding font for intellectual vibe */
+    font-size: 1.15em; /* Balanced size */
+    font-weight: 400; /* Regular weight for readability */
+    color: #2f3e46; /* Muted gray-blue for calmness */
+    margin-bottom: 20px;
+    text-align: justify; /* Clean block alignment */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    
-    .contact-icons a:hover {
-        background-color: #e6f0ff; /* Subtle blue tint on hover */
-        color: #0056b3; /* Darker blue for hover */
-        transform: translateY(-2px); /* Subtle lift effect */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    
-    /* Research Section Links */
-    .research-item a {
-        color: #007bff; /* Blue for research links */
-        text-decoration: none; /* No underline */
-        font-weight: 500; /* Slightly bold for visibility */
-        position: relative; /* Position for hover effects */
-        transition: color 0.3s ease, border-bottom 0.3s ease;
-    }
-    
-    .research-item a:hover {
-        color: #0056b3; /* Darker blue for hover */
-        text-decoration: none; /* Maintain no underline */
-        border-bottom: 2px solid #0056b3; /* Underline effect for hover */
-    }
+}
+
+/* Header Container */
+.header-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center; /* Center-align header for balance */
+}
+
+/* Location */
+.location {
+    font-family: 'EB Garamond', serif; /* Serif for a traditional look */
+    color: #636363; /* Subtle gray for secondary text */
+    margin-top: 10px;
+    font-size: 1em; /* Smaller for emphasis on header */
+    font-style: italic; /* Scholarly and poetic */
+}
+
+/* Contact Icons */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px; /* Space between icons */
+}
+
+.contact-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #fafafa; /* Paper-like background */
+    border: 2px solid #636363; /* Subtle border for elegance */
+    border-radius: 50%; /* Circular icons for modernity */
+    color: #2c3e50; /* Dark blue-gray */
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+}
+
+.contact-icons a:hover {
+    background-color: #d4af91; /* Gold highlight for prestige */
+    color: #ffffff; /* White icon on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+/* Profile Image */
+.photo-of-JP {
+    width: 140px; /* Slightly larger for prominence */
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-of-JP img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-of-JP:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Section Separator */
+h2::after {
+    content: '';
+    display: block;
+    width: 100px; /* Long separator for academic feel */
+    height: 4px;
+    background: #d4af91; /* Gold accent */
+    margin: 10px auto 0 auto; /* Center-align the line */
+    border-radius: 2px; /* Rounded edges */
+}
+
+/* Research Section */
+.research-item {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaeaea; /* Light divider for separation */
+}
+
+.research-item:last-child {
+    border-bottom: none;
+}
+
+.research-item a {
+    font-family: 'Source Code Pro', monospace; /* Intellectual monospace for research links */
+    color: #2a6496; /* Deep academic blue */
+    text-decoration: none; /* No underline */
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.research-item a:hover {
+    color: #1c3d5a; /* Darker hover color for contrast */
+    border-bottom: 2px solid #1c3d5a; /* Subtle underline effect */
+}
     </style>
 </head>
 <body>

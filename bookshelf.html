@@ -345,20 +345,30 @@
 
     </div>
 
-   <script>
+    <script>
         // Sorting Functionality
         const sortDropdown = document.getElementById('sort');
         const bookshelf = document.getElementById('bookshelf');
         const books = Array.from(document.querySelectorAll('.book-card'));
-
+    
         sortDropdown.addEventListener('change', () => {
             const sortBy = sortDropdown.value;
+    
+            // Sort the books array
             const sortedBooks = books.sort((a, b) => {
-                const aValue = a.dataset[sortBy].toLowerCase();
-                const bValue = b.dataset[sortBy].toLowerCase();
-                return aValue.localeCompare(bValue);
+                if (sortBy === 'rating') {
+                    // Parse data-rating as integers and sort in descending order
+                    const aValue = parseInt(a.dataset.rating, 10);
+                    const bValue = parseInt(b.dataset.rating, 10);
+                    return bValue - aValue; // Descending order
+                } else {
+                    // Default: Sort alphabetically for other data attributes
+                    const aValue = a.dataset[sortBy].toLowerCase();
+                    const bValue = b.dataset[sortBy].toLowerCase();
+                    return aValue.localeCompare(bValue);
+                }
             });
-
+    
             // Clear the bookshelf and append sorted books
             bookshelf.innerHTML = '';
             sortedBooks.forEach(book => bookshelf.appendChild(book));

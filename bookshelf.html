@@ -295,7 +295,7 @@
         
         <div class="book-card">
             <img src="https://m.media-amazon.com/images/I/61TQujsAmUL._AC_UF1000,1000_QL80_.jpg" alt="Creativity in Science">
-            <h3>Creativity in Science</h3>
+            <h3>Creativity in Science: Chance, Logic, Genius, and Zeitgeist</h3>
             <p>Dean Keith Simonton</p>
             <p class="category">Creativity</p>
         </div>
@@ -342,5 +342,25 @@
             <p class="category">Political Philosophy</p>
         </div>
     </div>
+
+   <script>
+        // Sorting Functionality
+        const sortDropdown = document.getElementById('sort');
+        const bookshelf = document.getElementById('bookshelf');
+        const books = Array.from(document.querySelectorAll('.book-card'));
+
+        sortDropdown.addEventListener('change', () => {
+            const sortBy = sortDropdown.value;
+            const sortedBooks = books.sort((a, b) => {
+                const aValue = a.dataset[sortBy].toLowerCase();
+                const bValue = b.dataset[sortBy].toLowerCase();
+                return aValue.localeCompare(bValue);
+            });
+
+            // Clear the bookshelf and append sorted books
+            bookshelf.innerHTML = '';
+            sortedBooks.forEach(book => bookshelf.appendChild(book));
+        });
+    </script>
 </body>
 </html>

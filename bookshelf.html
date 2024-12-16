@@ -5,122 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sam's Bookshelf</title>
     <style>
-        /* Reset and Box Sizing */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        /* Base Styling */
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #f5f5f5, #e1e1e1);
-            color: #333;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+    /* Reset and Box Sizing */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-        /* Container */
-        .container {
-            max-width: 800px;
-            background-color: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
-            padding: 25px;
-        }
-        
-        /* Header */
-        h1 {
-            text-align: center;
-            color: #4b4b4b;
-            font-size: 2.2rem;
-            font-weight: 400;
-            margin-bottom: 10px;
-        }
-        
-        .quote {
-            text-align: center;
-            font-style: italic;
-            color: #888;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
+    /* Base Styling */
+    body {
+        font-family: 'Georgia', serif;
+        background: linear-gradient(135deg, #f5f5f5, #e1e1e1);
+        color: #333;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
 
-        /* Bookshelf and Categories */
-        .bookshelf {
-            display: flex;
-            flex-direction: column;
-            gap: 35px;
-        }
+    /* Container */
+    .container {
+        max-width: 1200px;
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        padding: 25px;
+    }
 
-        .category h2 {
-            font-size: 1.6rem;
-            color: #5b5b5b;
-            border-bottom: 2px solid #dcdcdc;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-        }
+    /* Header */
+    h1 {
+        text-align: center;
+        color: #4b4b4b;
+        font-size: 2.2rem;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
 
-        /* Book Styling */
-        .book {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            background: #f9f9f9;
-            border-radius: 10px;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .quote {
+        text-align: center;
+        font-style: italic;
+        color: #888;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
 
-        .book:hover {
-            background-color: #fafafa;
-        }
+    /* Bookshelf Styling */
+    .bookshelf {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 
-        .book img {
-            width: 90px;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
+    .category {
+        flex: 1 1 calc(50% - 20px); /* Two columns */
+        background: #f9f9f9;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-        .book:hover img {
-            transform: scale(1.05);
+    @media (max-width: 768px) {
+        .category {
+            flex: 1 1 100%; /* Single column on smaller screens */
         }
+    }
 
-        .book h3 {
-            font-size: 1.3rem;
-            color: #333;
-            margin-bottom: 5px;
-        }
+    .category h2 {
+        font-size: 1.6rem;
+        color: #5b5b5b;
+        border-bottom: 2px solid #dcdcdc;
+        padding-bottom: 8px;
+        margin-bottom: 15px;
+    }
 
-        .book p {
-            color: #777;
-            font-size: 0.95rem;
-            margin: 0;
-        }
+    /* Book Styling */
+    .book {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px;
+        background: #ffffff;
+        border-radius: 10px;
+        transition: background-color 0.3s;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        /* Responsive Styling */
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-            .book {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-            .book img {
-                width: 80px;
-            }
-        }
-    </style>
+    .book:hover {
+        background-color: #fafafa;
+    }
+
+    .book img {
+        width: 90px;
+        height: auto;
+        border-radius: 6px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .book:hover img {
+        transform: scale(1.05);
+    }
+
+    .book h3 {
+        font-size: 1.3rem;
+        color: #333;
+        margin-bottom: 5px;
+    }
+
+    .book p {
+        color: #777;
+        font-size: 0.95rem;
+        margin: 0;
+    }
+</style>
 </head>
 <body>
     <div class="container">

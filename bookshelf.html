@@ -61,7 +61,7 @@
             border-radius: 5px;
         }
 
-        /* Grid Layout for Books */
+        /* Bookshelf Grid */
         .bookshelf {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -85,22 +85,30 @@
 
         .book-card img {
             width: 100%;
-            max-height: 300px;
+            max-height: 250px;
             object-fit: contain;
             border-radius: 6px;
             margin-bottom: 10px;
         }
 
         .book-card h3 {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #f5f5f5;
             margin-bottom: 5px;
+            font-weight: 600;
         }
 
         .book-card p {
             font-size: 0.9rem;
-            color: #aaaaaa;
-            margin: 0;
+            color: #bdbdbd;
+            margin: 3px 0;
+        }
+
+        .category {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 5px;
+            font-style: italic;
         }
 
         /* Responsive */
@@ -108,9 +116,8 @@
             header h1 {
                 font-size: 2rem;
             }
-
             .book-card img {
-                max-height: 200px;
+                max-height: 180px;
             }
         }
     </style>
@@ -121,47 +128,55 @@
         <p>"Pour inventer, il faut penser à côté."</p>
     </header>
 
+    <!-- Sort Section -->
     <div class="sort-section">
         <label for="sort">Sort by:</label>
         <select id="sort">
             <option value="title">Title</option>
             <option value="author">Author</option>
-            <option value="date">Date Read</option>
+            <option value="category">Category</option>
         </select>
     </div>
 
-    <!-- Bookshelf Grid -->
+    <!-- Bookshelf -->
     <div class="bookshelf">
-        <!-- Book 1 -->
+        <!-- Book Cards -->
         <div class="book-card">
             <img src="https://m.media-amazon.com/images/I/81HFexTeoXL._AC_UF1000,1000_QL80_.jpg" alt="The Critique of Pure Reason">
             <h3>The Critique of Pure Reason</h3>
             <p>Immanuel Kant</p>
+            <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
         </div>
-        <!-- Book 2 -->
+
         <div class="book-card">
             <img src="https://m.media-amazon.com/images/I/41ixw9l+t0L._SY445_SX342_.jpg" alt="The World as Will">
-            <h3>The World as Will and Representation</h3>
+            <h3>The World as Will</h3>
             <p>Arthur Schopenhauer</p>
+            <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
         </div>
-        <!-- Book 3 -->
+
         <div class="book-card">
             <img src="https://m.media-amazon.com/images/I/51f6vAE6rVL._AC_UF1000,1000_QL80_.jpg" alt="Principles of Genetic Epistemology">
             <h3>Principles of Genetic Epistemology</h3>
             <p>Jean Piaget</p>
+            <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>
         </div>
-        <!-- Book 4 -->
+
         <div class="book-card">
-            <img src="https://upittpress.org/wp-content/uploads/2022/02/9780822964568-scaled-381x555.jpg" alt="The Foundations of Scientific Inference">
-            <h3>The Foundations of Scientific Inference</h3>
-            <p>Wesley Salmon</p>
+            <img src="https://m.media-amazon.com/images/I/81pjGZRGaeL._AC_UY436_FMwebp_QL65_.jpg" alt="Genealogy of Morals">
+            <h3>On the Genealogy of Morality</h3>
+            <p>Friedrich Nietzsche</p>
+            <p class="category">Philosophy of Morality and Culture</p>
         </div>
-        <!-- Book 5 -->
+
         <div class="book-card">
-            <img src="https://m.media-amazon.com/images/I/614rftNyAaL._AC_UF350,350_QL50_.jpg" alt="Computational Philosophy of Science">
-            <h3>Computational Philosophy of Science</h3>
-            <p>Paul Thagard</p>
+            <img src="https://m.media-amazon.com/images/I/71kasdYij8L._AC_UF1000,1000_QL80_.jpg" alt="Psychology of the Unconscious">
+            <h3>Psychology of the Unconscious</h3>
+            <p>Carl Jung</p>
+            <p class="category">Theoretical Psychology</p>
         </div>
+
+        <!-- Add all remaining books here following the same pattern -->
     </div>
 </body>
 </html>

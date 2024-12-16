@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sam's Bookshelf</title>
-<style>
+    <style>
     /* Reset and Box Sizing */
     * {
         box-sizing: border-box;
@@ -14,9 +14,9 @@
 
     /* Base Styling */
     body {
-        font-family: 'Times New Roman', Times, serif;
-        background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
-        color: #e4e4e4;
+        font-family: 'Merriweather', serif; /* Elegant serif font */
+        background: #121212; /* True dark background */
+        color: #eaeaea; /* Soft white text */
         padding: 20px;
         display: flex;
         justify-content: center;
@@ -27,123 +27,132 @@
     /* Container */
     .container {
         max-width: 1200px;
-        background-color: #1a1a1a;
-        border-radius: 15px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-        padding: 25px;
-        border: 1px solid #3c3c3c;
+        background-color: #1a1a1a; /* Slightly lighter than the body */
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        padding: 30px;
+        border: 1px solid #333;
     }
 
     /* Header */
     h1 {
         text-align: center;
-        color: #f5f5f5;
-        font-size: 2.4rem;
+        color: #ffffff;
+        font-size: 2.6rem;
         font-weight: 700;
-        margin-bottom: 10px;
-        text-transform: uppercase;
+        margin-bottom: 15px;
+        letter-spacing: 0.5px;
     }
 
     .quote {
         text-align: center;
         font-style: italic;
-        color: #a6a6a6;
+        color: #a5a5a5;
         font-size: 1.2rem;
         margin-bottom: 30px;
     }
 
-    /* Bookshelf Styling */
+    /* Bookshelf */
     .bookshelf {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 25px;
     }
 
     .category {
-        flex: 1 1 calc(50% - 20px); /* Two columns */
-        background: #222222;
+        flex: 1 1 calc(50% - 20px); /* Two-column layout */
+        background: #222; /* Even darker sections */
         border-radius: 10px;
-        padding: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        border: 1px solid #3c3c3c;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        border: 1px solid #333;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    @media (max-width: 768px) {
-        .category {
-            flex: 1 1 100%; /* Single column on smaller screens */
-        }
+    .category:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
     }
 
     .category h2 {
         font-size: 1.8rem;
-        color: #d3d3d3;
+        color: #ffffff;
         border-bottom: 2px solid #444;
-        padding-bottom: 8px;
+        padding-bottom: 10px;
         margin-bottom: 15px;
-        text-transform: uppercase;
+        letter-spacing: 0.3px;
     }
 
     /* Book Styling */
     .book {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 15px;
         padding: 15px;
         background: #1e1e1e;
-        border-radius: 10px;
-        transition: background-color 0.3s;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        border: 1px solid #333;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
     }
 
     .book:hover {
-        background-color: #2a2a2a;
+        background-color: #292929;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
     }
 
     .book img {
-        width: 90px;
+        width: 80px;
         height: auto;
         border-radius: 6px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
         border: 1px solid #444;
     }
 
-    .book:hover img {
-        transform: scale(1.05);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-    }
-
     .book h3 {
-        font-size: 1.3rem;
-        color: #eaeaea;
+        font-size: 1.2rem;
+        color: #ffffff;
         margin-bottom: 5px;
+        font-weight: 600;
     }
 
     .book p {
         color: #bdbdbd;
-        font-size: 0.95rem;
-        margin: 0;
+        font-size: 0.9rem;
+        margin: 2px 0;
     }
 
-    /* Scrollbar (optional, for aesthetics) */
+    /* Footer Text Styling */
+    .book p:last-of-type {
+        color: #888; /* Subdued for "Read in 2024" */
+        font-style: italic;
+    }
+
+    /* Scrollbar (Optional) */
     ::-webkit-scrollbar {
         width: 8px;
     }
 
     ::-webkit-scrollbar-track {
-        background: #1e1e1e;
+        background: #1a1a1a;
     }
 
     ::-webkit-scrollbar-thumb {
         background: #444;
-        border-radius: 10px;
+        border-radius: 8px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
         background: #666;
     }
 
-    /* Responsive Styling */
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .category {
+            flex: 1 1 100%; /* Single column on smaller screens */
+        }
+    }
+
     @media (max-width: 600px) {
         .container {
             padding: 20px;
@@ -154,7 +163,7 @@
             text-align: center;
         }
         .book img {
-            width: 80px;
+            width: 70px;
         }
     }
 </style>

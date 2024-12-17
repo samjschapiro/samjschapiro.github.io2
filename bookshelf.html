@@ -362,7 +362,7 @@
                     const aValue = parseInt(a.dataset.rating, 10);
                     const bValue = parseInt(b.dataset.rating, 10);
                     return bValue - aValue; // Descending order
-                } else if (sortBy == 'date') {
+                } else if (sortBy === 'date') {
                     // Parse data-rating as integers and sort in descending order
                     const aValue = parseFloat(a.dataset.date);
                     const bValue = parseFloat(b.dataset.date);

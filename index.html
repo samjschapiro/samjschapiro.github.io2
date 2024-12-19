@@ -3,176 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel Schapiro - Professional Portfolio</title>
+    <title>Samuel Schapiro - Portfolio</title>
     <style>
         /* Global Styles */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body {
-            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: row;
-            background: #f9f9f9;
+            font-family: 'Inter', sans-serif;
+            background: #f4f4f9;
             color: #333;
+            overflow-x: hidden;
         }
 
-        /* Sidebar Navigation */
-        nav {
-            width: 220px;
-            background: #121212;
-            color: #fff;
+        /* Fullscreen Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            align-items: center;
             height: 100vh;
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            color: white;
+            padding: 0 50px;
+        }
+
+        .hero-text {
+            animation: slideInLeft 1.2s ease-out;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5em;
+            margin: 0;
+        }
+
+        .hero-text p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: zoomIn 1.5s ease-out;
+        }
+
+        .hero-image img {
+            width: 80%;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Floating Navigation Bar */
+        .navbar {
             position: fixed;
-            top: 0;
-            left: 0;
-            padding: 20px;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
             display: flex;
-            flex-direction: column;
-            gap: 15px;
+            padding: 10px 30px;
+            z-index: 1000;
         }
 
-        nav a {
-            color: #f5f5f5;
+        .navbar a {
+            margin: 0 15px;
+            font-size: 1em;
+            color: #333;
             text-decoration: none;
-            font-size: 1.1em;
             font-weight: 500;
-            padding: 10px;
-            border-left: 3px solid transparent;
-            transition: all 0.3s ease;
+            transition: color 0.3s;
         }
 
-        nav a:hover, nav a.active {
+        .navbar a:hover {
             color: #3b82f6;
-            border-left: 3px solid #3b82f6;
         }
 
-        /* Main Content */
-        main {
-            margin-left: 240px;
-            padding: 40px;
-            flex: 1;
+        /* Sections */
+        .section {
+            padding: 80px 50px;
+            position: relative;
+        }
+
+        .section:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .section-content {
             display: flex;
-            flex-direction: column;
+            align-items: center;
             gap: 40px;
         }
 
-        /* Hero Section */
-        .hero {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+        .section img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.2s ease-out;
         }
 
-        .hero img {
-            width: 200px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-content {
+        .section-text {
             max-width: 600px;
+            animation: slideInRight 1.2s ease-out;
         }
 
-        .hero-content h1 {
-            font-size: 2.5em;
-            margin: 0;
-            color: #121212;
+        .section h2 {
+            font-size: 2em;
+            margin: 0 0 20px;
         }
 
-        .hero-content h2 {
-            font-size: 1.2em;
-            font-weight: 400;
-            margin: 10px 0;
+        .section p {
+            font-size: 1.1em;
+            line-height: 1.8;
             color: #555;
         }
 
-        .hero-content p {
-            line-height: 1.6;
-            color: #666;
+        .section a {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1em;
+            font-weight: 600;
+            color: #3b82f6;
+            text-decoration: none;
+            border: 2px solid #3b82f6;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s;
         }
 
-        /* Featured Section */
-        .featured {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+        .section a:hover {
+            background: #3b82f6;
+            color: white;
         }
 
-        .featured-item {
-            flex: 1 1 calc(50% - 20px);
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
-        .featured-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
-        .featured-item h3 {
-            margin: 10px 0;
-            font-size: 1.4em;
-            color: #121212;
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
-        .featured-item p {
-            color: #666;
-            line-height: 1.6;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #333;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#home" class="active">Home</a>
-        <a href="#bio">Bio</a>
-        <a href="#lab">Lab</a>
-        <a href="#papers">Papers</a>
-        <a href="#speaking">Speaking</a>
-        <a href="#books">Books</a>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#science">Science</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#entrepreneurship">Entrepreneurship</a>
         <a href="#contact">Contact</a>
-    </nav>
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <img src="your-photo.jpg" alt="Samuel Schapiro">
-            <div class="hero-content">
-                <h1>Samuel Schapiro</h1>
-                <h2>Author | Research Scientist | AI Innovator</h2>
-                <p>
-                    Exploring the science of intelligence through computational creativity, philosophy, and entrepreneurship. 
-                    As a founding research scientist at Spiral Works, I strive to unlock new paradigms in AI and creativity.
-                </p>
-            </div>
-        </section>
+    </div>
 
-        <!-- Featured Section -->
-        <section class="featured">
-            <div class="featured-item">
-                <img src="research-thumbnail.jpg" alt="Research">
-                <h3>Algorithmic Foundations of Creativity</h3>
-                <p>
-                    Understanding creativity in AI through mathematical frameworks and computational models. 
-                    <a href="https://spiralworks.ai">Learn more</a>.
-                </p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Samuel Schapiro</h1>
+            <p>Exploring the boundaries of intelligence through creativity, philosophy, and innovation. Join me in uncovering new paradigms in science and technology.</p>
+        </div>
+        <div class="hero-image">
+            <img src="your-photo.jpg" alt="Samuel Schapiro">
+        </div>
+    </section>
+
+    <!-- Science Section -->
+    <section id="science" class="section">
+        <div class="section-content">
+            <div class="section-text">
+                <h2>Science</h2>
+                <p>Advancing research at the intersection of AI, creativity, and intelligence. My work focuses on theoretical foundations and practical applications in computational creativity and generalization theory.</p>
+                <a href="https://spiralworks.ai">Learn More</a>
             </div>
-            <div class="featured-item">
-                <img src="philosophy-thumbnail.jpg" alt="Philosophy">
-                <h3>Philosophical Insights</h3>
-                <p>
-                    Investigating the interplay between creativity, intelligence, and cognition. 
-                    <a href="https://samuelschapiro.substack.com/">Read essays</a>.
-                </p>
+            <img src="science-image.jpg" alt="Science">
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="section">
+        <div class="section-content">
+            <img src="philosophy-image.jpg" alt="Philosophy">
+            <div class="section-text">
+                <h2>Philosophy</h2>
+                <p>Exploring the philosophical underpinnings of intelligence and creativity. My work connects ideas from cognitive science, AI, and philosophy to understand the human condition.</p>
+                <a href="https://samuelschapiro.substack.com/">Read Essays</a>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <!-- Entrepreneurship Section -->
+    <section id="entrepreneurship" class="section">
+        <div class="section-content">
+            <div class="section-text">
+                <h2>Entrepreneurship</h2>
+                <p>As the founding research scientist at Spiral Works, I bridge research and real-world applications, tackling understudied aspects of AI with a focus on innovation and creativity.</p>
+                <a href="https://spiralworks.ai">Visit Spiral Works</a>
+            </div>
+            <img src="entrepreneurship-image.jpg" alt="Entrepreneurship">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Samuel Schapiro | All Rights Reserved
+    </footer>
 </body>
 </html>

@@ -8,204 +8,171 @@
         /* Global Styles */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body {
-            margin: 0;
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #f4f4f9, #e8eaf6);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            background: #f9f9f9;
             color: #333;
-            overflow-x: hidden;
         }
 
-        /* Header */
-        header {
+        /* Sidebar Navigation */
+        nav {
+            width: 220px;
             background: #121212;
             color: #fff;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::after {
-            content: '';
-            position: absolute;
+            height: 100vh;
+            position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #3b82f6, #6366f1, #9333ea);
-            z-index: -1;
-            opacity: 0.6;
-            animation: gradientMove 8s infinite linear;
-        }
-
-        header h1 {
-            font-size: 3em;
-            margin: 0;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        /* Navigation */
-        nav {
+            padding: 20px;
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            background: #1c1c1c;
-            padding: 10px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            flex-direction: column;
+            gap: 15px;
         }
 
         nav a {
-            color: #fff;
+            color: #f5f5f5;
             text-decoration: none;
             font-size: 1.1em;
             font-weight: 500;
-            position: relative;
+            padding: 10px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
         }
 
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background: #3b82f6;
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Main Sections */
-        main {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 50px 20px;
-            animation: fadeInUp 1.5s ease-out;
-        }
-
-        section {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        section:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        section h2 {
-            margin: 0;
-            padding: 20px;
-            background: #3b82f6;
-            color: #fff;
-            font-size: 1.5em;
-            text-align: center;
-        }
-
-        section p {
-            padding: 20px;
-            font-size: 1em;
-            line-height: 1.6;
-        }
-
-        section a {
-            display: block;
-            margin: 10px 20px 20px;
-            text-decoration: none;
+        nav a:hover, nav a.active {
             color: #3b82f6;
-            font-weight: 500;
-            transition: color 0.3s;
+            border-left: 3px solid #3b82f6;
         }
 
-        section a:hover {
-            color: #1c64f2;
+        /* Main Content */
+        main {
+            margin-left: 240px;
+            padding: 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            background: #1c1c1c;
-            color: #fff;
         }
 
-        /* Animations */
-        @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+        .hero img {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        .hero-content {
+            max-width: 600px;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .hero-content h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #121212;
+        }
+
+        .hero-content h2 {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .hero-content p {
+            line-height: 1.6;
+            color: #666;
+        }
+
+        /* Featured Section */
+        .featured {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .featured-item {
+            flex: 1 1 calc(50% - 20px);
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .featured-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .featured-item h3 {
+            margin: 10px 0;
+            font-size: 1.4em;
+            color: #121212;
+        }
+
+        .featured-item p {
+            color: #666;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Samuel Schapiro</h1>
-        <p>Exploring the Intersection of Science, Philosophy, and Entrepreneurship</p>
-    </header>
     <nav>
-        <a href="#science">Science</a>
-        <a href="#philosophy">Philosophy</a>
-        <a href="#entrepreneurship">Entrepreneurship</a>
+        <a href="#home" class="active">Home</a>
+        <a href="#bio">Bio</a>
+        <a href="#lab">Lab</a>
+        <a href="#papers">Papers</a>
+        <a href="#speaking">Speaking</a>
+        <a href="#books">Books</a>
+        <a href="#contact">Contact</a>
     </nav>
     <main>
-        <section id="science">
-            <h2>Science</h2>
-            <p>My work focuses on advancing our understanding of intelligence, with key contributions to computational creativity, transfer learning, and generalization theory.</p>
-            <a href="https://arxiv.org/pdf/2412.05169">View Research</a>
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="your-photo.jpg" alt="Samuel Schapiro">
+            <div class="hero-content">
+                <h1>Samuel Schapiro</h1>
+                <h2>Author | Research Scientist | AI Innovator</h2>
+                <p>
+                    Exploring the science of intelligence through computational creativity, philosophy, and entrepreneurship. 
+                    As a founding research scientist at Spiral Works, I strive to unlock new paradigms in AI and creativity.
+                </p>
+            </div>
         </section>
-        <section id="philosophy">
-            <h2>Philosophy</h2>
-            <p>I delve into the philosophical foundations of intelligence, creativity, and cognition, bridging abstract ideas with computational theory.</p>
-            <a href="https://samuelschapiro.substack.com/">Read My Essays</a>
-        </section>
-        <section id="entrepreneurship">
-            <h2>Entrepreneurship</h2>
-            <p>As the founding scientist at Spiral Works, I lead efforts to connect groundbreaking research with practical applications in computational creativity.</p>
-            <a href="https://spiralworks.ai">Visit Spiral Works</a>
+
+        <!-- Featured Section -->
+        <section class="featured">
+            <div class="featured-item">
+                <img src="research-thumbnail.jpg" alt="Research">
+                <h3>Algorithmic Foundations of Creativity</h3>
+                <p>
+                    Understanding creativity in AI through mathematical frameworks and computational models. 
+                    <a href="https://spiralworks.ai">Learn more</a>.
+                </p>
+            </div>
+            <div class="featured-item">
+                <img src="philosophy-thumbnail.jpg" alt="Philosophy">
+                <h3>Philosophical Insights</h3>
+                <p>
+                    Investigating the interplay between creativity, intelligence, and cognition. 
+                    <a href="https://samuelschapiro.substack.com/">Read essays</a>.
+                </p>
+            </div>
         </section>
     </main>
-    <footer>
-        &copy; 2024 Samuel Schapiro | All Rights Reserved
-    </footer>
 </body>
 </html>

@@ -6,12 +6,12 @@
     <title>Samuel Schapiro - Portfolio</title>
     <style>
         /* Global Styles */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Spectral:wght@400;500;600&display=swap');
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
-            background: #141414; /* Dark, mysterious background */
+            font-family: 'Spectral', serif; /* Fantasy-style font for general text */
+            background: #141414;
             color: #ffffff;
             overflow-x: hidden;
         }
@@ -19,12 +19,12 @@
         /* Unconventional Grid Hero Section */
         .hero {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
+            grid-template-columns: 1fr;
             grid-template-rows: auto auto;
             height: 100vh;
             background: linear-gradient(135deg, #1e1e1e, #3b3b3b);
             color: #eaeaea;
-            padding: 50px;
+            padding: 30px;
             position: relative;
         }
 
@@ -41,19 +41,18 @@
         }
 
         .hero-text {
-            grid-column: 1 / span 1;
-            grid-row: 1 / span 2;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            text-align: center;
             animation: fadeIn 1.5s ease-out;
         }
 
         .hero-text h1 {
-            font-size: 3.8em;
-            line-height: 1.2;
+            font-size: 3.2em;
             margin: 0;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            font-family: 'Uncial Antiqua', serif; /* Decorative font for the header */
             color: #ffffff;
         }
 
@@ -65,51 +64,55 @@
         }
 
         .hero-image {
-            grid-column: 2 / span 1;
-            grid-row: 1 / span 1;
             display: flex;
             justify-content: center;
             align-items: center;
             animation: zoomIn 1.5s ease-out;
+            margin-top: 20px;
         }
 
         .hero-image img {
-            width: 80%;
+            width: 60%;
             border-radius: 50%;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
             border: 4px solid #3b82f6;
         }
 
-        /* Asymmetrical Navigation */
+        /* Floating Navigation */
         .navbar {
             position: fixed;
             top: 10px;
             right: 10px;
-            background: transparent;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
             z-index: 1000;
             display: flex;
             flex-direction: column;
             gap: 10px;
+            padding: 10px 20px;
         }
 
         .navbar a {
             color: #ffffff;
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 500;
             text-decoration: none;
             text-transform: uppercase;
-            padding: 10px;
-            transition: color 0.3s;
+            padding: 5px 10px;
+            transition: color 0.3s, transform 0.2s;
+            font-family: 'Uncial Antiqua', serif;
         }
 
         .navbar a:hover {
             color: #3b82f6;
+            transform: scale(1.1);
         }
 
         /* Section */
         .section {
-            padding: 100px 50px;
+            padding: 60px 20px;
             position: relative;
+            text-align: center;
         }
 
         .section:nth-child(even) {
@@ -117,17 +120,16 @@
         }
 
         .section-heading {
-            font-size: 2.5em;
+            font-size: 2.2em;
             color: #ffffff;
             margin: 0 0 20px;
-            text-align: center;
-            position: relative;
+            font-family: 'Uncial Antiqua', serif;
         }
 
         .section-heading::after {
             content: '';
             display: block;
-            width: 80px;
+            width: 60px;
             height: 3px;
             background: #3b82f6;
             margin: 10px auto 0;
@@ -136,22 +138,22 @@
         .section-content {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-            margin-top: 50px;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
         }
 
         .section-item {
-            flex: 1 1 calc(50% - 20px);
             background: #292929;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             animation: fadeIn 1.5s ease-out;
+            max-width: 500px;
         }
 
         .section-item h3 {
-            font-size: 1.4em;
+            font-size: 1.5em;
             margin: 0 0 10px;
             color: #ffffff;
         }
@@ -183,10 +185,28 @@
         /* Footer */
         footer {
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px;
             background: #121212;
             color: #bbbbbb;
             font-size: 1em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                text-align: center;
+                height: auto;
+            }
+
+            .hero-image img {
+                width: 70%;
+            }
+
+            .section-content {
+                flex-direction: column;
+            }
         }
 
         /* Animations */
@@ -241,7 +261,7 @@
     <section class="hero">
         <div class="hero-text">
             <h1>Samuel Schapiro</h1>
-            <p>Exploring the boundaries of intelligence, creativity, and philosophy through unconventional thinking and groundbreaking research.</p>
+            <p>Unraveling the boundaries of intelligence, creativity, and philosophy through research and discovery.</p>
         </div>
         <div class="hero-image">
             <img src="your-photo.jpg" alt="Samuel Schapiro">
@@ -253,13 +273,13 @@
         <h2 class="section-heading">Science</h2>
         <div class="section-content">
             <div class="section-item">
-                <h3>Algorithmic Foundations of Creativity</h3>
-                <p>Diving deep into the computational and theoretical underpinnings of creative intelligence.</p>
+                <h3>Foundations of Creativity</h3>
+                <p>Exploring computational approaches to understanding creativity and its role in AI systems.</p>
                 <a href="https://spiralworks.ai">Learn More</a>
             </div>
             <div class="section-item">
-                <h3>Transfer Learning Insights</h3>
-                <p>Understanding how models generalize and adapt to new tasks and domains.</p>
+                <h3>Transfer Learning</h3>
+                <p>Researching how models adapt and generalize to new, unseen domains.</p>
                 <a href="#">Read More</a>
             </div>
         </div>

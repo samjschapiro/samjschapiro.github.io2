@@ -3,236 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel Schapiro - Personal Website</title>
- <style>
-       /* Global Styles */
-/* Import the new font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    <title>Samuel Schapiro - Professional Portfolio</title>
+    <style>
+        /* Global Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f4f4f9, #e8eaf6);
+            color: #333;
+            overflow-x: hidden;
+        }
 
-/* Global Styles */
-body {
-    font-family: 'Inter', sans-serif; /* Change font to Inter */
-    line-height: 1.6;
-    color: #333;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
-    animation: fadeIn 1s ease-in-out;
-}
+        /* Header */
+        header {
+            background: #121212;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-/* Header Text */
-.header-text h1 {
-    font-size: 2.5em;
-    font-weight: 600; /* Use a bold but clean weight */
-    color: #444;
-    margin: 0;
-}
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #3b82f6, #6366f1, #9333ea);
+            z-index: -1;
+            opacity: 0.6;
+            animation: gradientMove 8s infinite linear;
+        }
 
-h2 {
-    font-size: 1.8em;
-    font-weight: 500; /* Slightly lighter for section titles */
-    color: #444;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    position: relative;
-}
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
 
-p {
-    font-size: 1.1em;
-    font-weight: 300; /* Light font weight for sleekness */
-    color: #555; /* Slightly softer color for text */
-}
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
 
-.contact-icons a {
-    font-weight: 400; /* Medium weight for icons/text links */
-}
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            background: #1c1c1c;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 500;
+            position: relative;
+        }
 
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s;
+        }
 
-/* Header Styles */
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-    padding-top: 50px;
-}
+        nav a:hover::after {
+            width: 100%;
+        }
 
-.location {
-    color: #666;
-    margin-top: 5px; /* Adjust vertical spacing above */
-    margin-bottom: 15px; /* Add space between location and icons */
-}
+        /* Main Sections */
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px 20px;
+            animation: fadeInUp 1.5s ease-out;
+        }
 
-.contact-icons {
-    margin-top: 10px; /* Ensure some spacing above the icons */
-    margin-bottom: 20px; /* Optional: Extra spacing below the icons */
-}
+        section {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.contact-icons a {
-    margin-right: 15px; /* Space between icons */
-    text-decoration: none;
-    color: #444;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
 
-.photo-of-JP {
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
+        section h2 {
+            margin: 0;
+            padding: 20px;
+            background: #3b82f6;
+            color: #fff;
+            font-size: 1.5em;
+            text-align: center;
+        }
 
-.photo-of-JP img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        section p {
+            padding: 20px;
+            font-size: 1em;
+            line-height: 1.6;
+        }
 
-.photo-of-JP:hover {
-    transform: scale(1.1);
-}
+        section a {
+            display: block;
+            margin: 10px 20px 20px;
+            text-decoration: none;
+            color: #3b82f6;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: #007bff;
-    margin-top: 10px;
-}
+        section a:hover {
+            color: #1c64f2;
+        }
 
-p {
-    margin-bottom: 15px;
-    font-size: 1.1em;
-}
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1c1c1c;
+            color: #fff;
+        }
 
-/* Research Section */
-.research-item {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #ddd;
-}
+        /* Animations */
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-.research-item:last-child {
-    border-bottom: none;
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-.research-item a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.research-item a:hover {
-    color: #0056b3;
-}
-   
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
-    <header class="header-container">
-        <div class="header-text">
-            <h1>Samuel Schapiro</h1>
-<!--             <div class="location">📍 San Francisco Bay Area, CA </div> -->
-            <div class="contact-icons">
-                <a href="https://twitter.com/samschapiro">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="Twitter" width="20" height="20">
-                </a>
-                <a href="mailto:sjs17@illinois.edu">
-                    <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-1024.png" alt="Email" width="20" height="20">
-                </a>
-                <a href="https://scholar.google.com/citations?user=B2UNU6EAAAAJ&hl=en">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Google_Scholar_logo.svg/512px-Google_Scholar_logo.svg.png?20200110094142" alt="GS" width="20" height="20">
-                </a>
-                <a href="https://github.com/samjschapiro">
-                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="20" height="20">
-                </a>
-                <a href="https://www.linkedin.com/in/samuel-schapiro/">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="20" height="20">
-                </a>
-<!--                 <a href="https://www.instagram.com/schapiro.sam/">
-                    <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yx/r/tBxa1IFcTQH.png" alt="Twitter" width="20" height="20">
-                </a> -->
-            </div>
-        </div>
-        <div class="photo-of-JP">
-            <img src="images/headshot.jpeg" alt="Samuel Schapiro" width="96" height="96">
-        </div>
+    <header>
+        <h1>Samuel Schapiro</h1>
+        <p>Exploring the Intersection of Science, Philosophy, and Entrepreneurship</p>
     </header>
+    <nav>
+        <a href="#science">Science</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#entrepreneurship">Entrepreneurship</a>
+    </nav>
     <main>
-        <section class="bio-section">
-            <p>My name is Sam. I am studying the <b>science of intelligence</b> using mathematics, computer science, philosophy, and psychology</p>  
-                
-            <p>I am currently the founding research scientist of a multidisciplinary AI research lab called <a href="https://spiralworks.ai">Spiral Works</a>, working on <b>computational creativity</b> and other understudied aspects of intelligence. 
-                Previously, I was a visiting researcher at the Simons Institute for the Theory of Computing, UC Berkeley studying <a href="https://simons.berkeley.edu/programs/modern-paradigms-generalization">Modern Paradigms in Generalization</a>.
-                </p>
-                
-            <p>During my undergrad in CS at UIUC, I have been fortunate to study <b>transfer learning</b> and <b>deep learning theory</b> with the brilliant <a href="https://hanzhaoml.github.io">Han Zhao</a> and 
-                the glorious <a href="https://arindam.cs.illinois.edu">Arindam Banerjee</a>. I like to <a href="bookshelf.html">read</a> and <a href="https://samuelschapiro.substack.com/">write</a>.</p>
-
+        <section id="science">
+            <h2>Science</h2>
+            <p>My work focuses on advancing our understanding of intelligence, with key contributions to computational creativity, transfer learning, and generalization theory.</p>
+            <a href="https://arxiv.org/pdf/2412.05169">View Research</a>
         </section>
-        <section class="research-section">
-            <h2>Research</h2>
-            <h3>Algorithmic and Theoretical Foundations of Creativity</h3>
-            <p>Towards Understanding Creativity in Language Models: Algorithms and Theory<br>
-                <u>Samuel Schapiro</u>, Royce Moon, Aishik Sanyal <br>
-                <i>Manuscript in Progress</i>
-            </p>
-             <p><a href="files/A Mathematical Framework for Evaluating the Creativity of Ideas.pdf">A Mathematical Framework for Evaluating the Creativity of Ideas</a><br>
-                <u>Samuel Schapiro</u>, Royce Moon, Aishik Sanyal <br>
-            </p>
-    
-            <h3>Transfer Learning; Deep Learning Theory</h3>
-            <p><a href="https://arxiv.org/pdf/2412.05169">Towards Understanding the Role of Sharpness-Aware Minimization Algorithms for Out-of-Distribution Generalization</a><br>
-                <u>Samuel Schapiro,</u> Han Zhao<br>
-                Under Review at <i>Transactions on Machine Learning Research 2024</i>
-            </p>
-            <p>Sharpness-Aware Minimization: Feature Selection and Implicit Biases <br>
-                <u>Samuel Schapiro,</u> Erin Zhang, Han Zhao, Arindam Banerjee <br>
-                <i>Princeton Workshop on Optimization, Learning, and Control 2024</i></p>
+        <section id="philosophy">
+            <h2>Philosophy</h2>
+            <p>I delve into the philosophical foundations of intelligence, creativity, and cognition, bridging abstract ideas with computational theory.</p>
+            <a href="https://samuelschapiro.substack.com/">Read My Essays</a>
         </section>
-        
-        <section class="philosophical-work-section">
-        <h2>Philosophical Work</h2>
-        <div id="substack-feed-embed"></div>
-
-        <script>
-          window.SubstackFeedWidget = {
-            substackUrl: "samuelschapiro.substack.com",
-            posts: 3,
-            layout: "right"
-          };
-        </script>
-        <script src="https://substackapi.com/embeds/feed.js" async></script>
+        <section id="entrepreneurship">
+            <h2>Entrepreneurship</h2>
+            <p>As the founding scientist at Spiral Works, I lead efforts to connect groundbreaking research with practical applications in computational creativity.</p>
+            <a href="https://spiralworks.ai">Visit Spiral Works</a>
         </section>
-        
-        <h2>Reading Groups</h2>
-        <p>Fall 2024: <a href="https://sites.google.com/berkeley.edu/generalization-phil-and-psych/">Philosophy and Psychology of Generalization and Creativity</a></p>
-        <p>Starting 2025: <a href="https://spiralworks.ai/#/reading-group">Algorithmic and Theoretical Foundations of Creativity</a>.</p>
-
     </main>
+    <footer>
+        &copy; 2024 Samuel Schapiro | All Rights Reserved
+    </footer>
 </body>
 </html>
-
-

@@ -77,7 +77,7 @@
         gap: 20px;
     }
 
-    /* Book Card */
+/*     /* Book Card */
     .book-card {
         background-color: #1e1e1e;
         border: 1px solid #333;
@@ -86,6 +86,49 @@
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         font-family: 'Lora', serif;
+    } */
+
+        /* Book Card Styles */
+    .book-card {
+        position: relative; /* For absolute positioning of the date badge */
+        background-color: #1e1e1e;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 15px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        font-family: 'Lora', serif;
+    }
+
+    /* Date Badge Styles */
+    .date-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px; /* Adjust to top-right by changing to "right: 10px;" */
+        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+        color: #fff; /* White text for contrast */
+        padding: 5px 10px; /* Space inside the badge */
+        border-radius: 5px; /* Rounded corners */
+        font-size: 0.85rem; /* Slightly smaller text */
+        font-weight: bold;
+        font-family: 'Lora', serif; /* Matches overall card styling */
+        z-index: 10; /* Ensures it stays above the image */
+    }
+    
+    /* Book Card Image */
+    .book-card img {
+        width: 100%; /* Full width of the card */
+        border-radius: 8px; /* Matches the card's rounded corners */
+        object-fit: cover; /* Ensures image fits neatly */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        margin-bottom: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    /* Book Card Image Hover */
+    .book-card img:hover {
+        transform: scale(1.05); /* Zoom-in effect */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
     }
 
     .book-card:hover {
@@ -163,6 +206,7 @@
     <div class="bookshelf" id="bookshelf">
         <!-- Book Cards -->
        <div class="book-card" data-title="The Critique of Pure Reason" data-author="Immanuel Kant" data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating=10 data-date="202409">
+           <div class="date-badge">09/2024</div>
             <img src="https://m.media-amazon.com/images/I/81HFexTeoXL._AC_UF1000,1000_QL80_.jpg" alt="The Critique of Pure Reason">
             <h3>The Critique of Pure Reason</h3>
             <p>Immanuel Kant</p>

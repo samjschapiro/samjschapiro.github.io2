@@ -77,20 +77,10 @@
         gap: 20px;
     }
 
-/*     /* Book Card */
-/*     .book-card {
-        background-color: #1e1e1e;
-        border: 1px solid #333;
-        border-radius: 8px;
-        padding: 15px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        font-family: 'Lora', serif;
-    } */
- */
-        /* Book Card Styles */
+   /* Book Card Styles */
     .book-card {
-        position: relative; /* For absolute positioning of the date badge */
+        display: flex;
+        flex-direction: column;
         background-color: #1e1e1e;
         border: 1px solid #333;
         border-radius: 8px;
@@ -98,21 +88,44 @@
         text-align: center;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         font-family: 'Lora', serif;
+        overflow: hidden; /* Prevents overflow from any child elements */
     }
-
-    /* Date Badge Styles */
+    
+    /* Book Card Image Wrapper */
+    .image-wrapper {
+        position: relative; /* Creates a stacking context for the badge */
+        display: flex;
+        justify-content: flex-start; /* Aligns badge in the top-left */
+        align-items: flex-start; /* Aligns badge in the top-left */
+    }
+    
+    /* Book Card Image */
+    .image-wrapper img {
+        width: 100%;
+        border-radius: 8px;
+        object-fit: cover;
+        display: block;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    /* Hover Effect */
+    .image-wrapper img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Date Badge */
     .date-badge {
-        position: absolute;
-        top: 10px;
-        left: 10px; /* Adjust to top-right by changing to "right: 10px;" */
-        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-        color: #fff; /* White text for contrast */
-        padding: 5px 10px; /* Space inside the badge */
-        border-radius: 5px; /* Rounded corners */
-        font-size: 0.85rem; /* Slightly smaller text */
+        margin: 8px; /* Space from the edges of the image */
+        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+        color: #fff; /* White text for readability */
+        padding: 5px 10px; /* Inner padding */
+        border-radius: 4px; /* Subtle rounded corners */
+        font-size: 0.8rem; /* Small, readable text */
         font-weight: bold;
-        font-family: 'Lora', serif; /* Matches overall card styling */
-        z-index: 10; /* Ensures it stays above the image */
+        pointer-events: none; /* Avoids interaction with the badge */
+        z-index: 1; /* Ensures badge is above the image */
     }
     
     /* Book Card Image */
@@ -206,8 +219,10 @@
     <div class="bookshelf" id="bookshelf">
         <!-- Book Cards -->
        <div class="book-card" data-title="The Critique of Pure Reason" data-author="Immanuel Kant" data-category="Philosophy of Science, Metaphysics, Epistemology" data-rating=10 data-date="202409">
-           <div class="date-badge">09/2024</div>
-            <img src="https://m.media-amazon.com/images/I/81HFexTeoXL._AC_UF1000,1000_QL80_.jpg" alt="The Critique of Pure Reason">
+            <div class="image-wrapper">
+               <div class="date-badge">09/2024</div>
+                <img src="https://m.media-amazon.com/images/I/81HFexTeoXL._AC_UF1000,1000_QL80_.jpg" alt="The Critique of Pure Reason">
+            </div>
             <h3>The Critique of Pure Reason</h3>
             <p>Immanuel Kant</p>
             <p class="category">Philosophy of Science, Metaphysics, Epistemology</p>

@@ -129,7 +129,13 @@
         z-index: 2; /* Ensures the badge is on top of the image */
         pointer-events: none; /* Prevents badge from interfering with hover effects */
     }
-    
+
+    .image-wrapper:hover .date-badge {
+        padding: 10px 15px; /* Expand padding */
+        font-size: 1rem; /* Increase font size */
+        background-color: rgba(0, 0, 0, 0.9); /* Slightly darker background */
+    }
+        
     /* Book Card Image */
     .book-card img {
         width: 100%; /* Full width of the card */

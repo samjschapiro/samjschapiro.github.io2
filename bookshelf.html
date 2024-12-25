@@ -117,15 +117,17 @@
     
     /* Date Badge */
     .date-badge {
-        margin: 8px; /* Space from the edges of the image */
+        position: absolute;
+        top: 10px; /* Position the badge in the top-left corner */
+        left: 10px;
         background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
         color: #fff; /* White text for readability */
         padding: 5px 10px; /* Inner padding */
         border-radius: 4px; /* Subtle rounded corners */
         font-size: 0.8rem; /* Small, readable text */
         font-weight: bold;
-        pointer-events: none; /* Avoids interaction with the badge */
-        z-index: 1; /* Ensures badge is above the image */
+        z-index: 2; /* Ensures the badge is on top of the image */
+        pointer-events: none; /* Prevents badge from interfering with hover effects */
     }
     
     /* Book Card Image */

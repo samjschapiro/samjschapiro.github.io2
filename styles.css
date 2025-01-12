@@ -1,78 +1,111 @@
-/* styles.css */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
-    background: #f9f9f9;
+    background: #F7FAFC;
     color: #333;
 }
 
-header {
-    background: linear-gradient(135deg, #282c34, #5c7aff);
-    color: white;
+/* Navigation Bar */
+nav {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0.5rem 2rem;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    margin: 0 1rem;
+}
+
+.nav-list a {
+    font-family: 'Poppins', sans-serif;
+    color: #2B6CB0;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.nav-list a:hover {
+    background: #E2E8F0;
+}
+
+/* Hero Section */
+.hero {
     text-align: center;
-    padding: 2rem 0;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #2B6CB0, #63B3ED);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-header .hero {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-header p {
-    font-size: 1.2rem;
-}
-
-main {
-    padding: 2rem;
-}
-
-main section {
-    margin-bottom: 2rem;
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-main h2 {
-    font-size: 1.8rem;
+.hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
     margin-bottom: 1rem;
-    color: #5c7aff;
 }
 
-footer {
-    text-align: center;
-    background: #282c34;
-    color: white;
-    padding: 1rem 0;
-    margin-top: 2rem;
+.hero p {
+    font-size: 1.2rem;
+    margin: 0;
 }
 
+/* Sections */
+section {
+    padding: 3rem 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2B6CB0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Blockquote Styling */
 blockquote {
-    border-left: 6px solid #5c7aff;
+    border-left: 6px solid #2B6CB0;
     margin: 1.5rem 0;
     padding: 1rem 1.5rem;
-    background: #ffffff; /* Light background for better readability */
+    background: #f5f7fa;
     font-style: italic;
     font-size: 1rem;
-    color: #333; /* Dark gray for better contrast without being harsh */
+    color: #333;
     line-height: 1.8;
-    border-radius: 8px; /* Rounded corners for a softer look */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 blockquote footer {
     text-align: right;
     font-size: 0.9rem;
     margin-top: 0.5rem;
-    color: #555; /* Medium gray for a softer tone */
+    color: #555;
     font-style: normal;
     font-weight: bold;
 }
@@ -82,7 +115,7 @@ blockquote:before {
     font-size: 2rem;
     line-height: 0;
     margin-right: 0.3rem;
-    color: #5c7aff; /* Accent color for the opening quote */
+    color: #2B6CB0;
     vertical-align: -0.4rem;
 }
 
@@ -91,6 +124,31 @@ blockquote:after {
     font-size: 2rem;
     line-height: 0;
     margin-left: 0.3rem;
-    color: #5c7aff; /* Accent color for the closing quote */
+    color: #2B6CB0;
     vertical-align: -0.4rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #2B6CB0;
+    color: white;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
 }

@@ -25,21 +25,20 @@
     </header>
 
     <main>
-        <section id="introduction" class="fade-in-up">
+        <section id="introduction" class="hidden">
             <h2><i class="fas fa-lightbulb"></i> Introduction</h2>
-            <p>We are on the precipice of a scientific revolution in AI. How do theorists explain the remarkable generalization and reasoning abilities exhibited by LLMs? How do we push the generalization abilities of AI systems even further, into areas like scientific and industrial creativity?</p>
-            <p>While we don’t yet know the complete answers to these questions, we do know what the type of work that will yield these solutions will look like:</p>
+            <p>We are on the precipice of a scientific revolution in AI...</p>
             <ol>
-                <li class="fade-in">
+                <li>
                     It will probably come from young people who are newer to the field.
-                    <blockquote class="fade-in-up">
-                        Almost always the men who achieve these fundamental inventions of a new paradigm have been either very young or very new to the field whose paradigm they change...
+                    <blockquote class="hidden">
+                        Almost always the men who achieve these fundamental inventions of a new paradigm have been either very young...
                         <br>— Thomas S. Kuhn, <i>The Structure of Scientific Revolutions</i> (p. 90)
                     </blockquote>
                 </li>
-                <li class="fade-in">
-                    It will be preceded by rigorous philosophical investigations and debates into the foundations of intelligence that unveil what the new paradigms should look like.
-                    <blockquote class="fade-in-up">
+                <li>
+                    It will be preceded by rigorous philosophical investigations...
+                    <blockquote class="hidden">
                         The proliferation of competing articulations, the willingness to try anything...
                         <br>— Thomas S. Kuhn, <i>The Structure of Scientific Revolutions</i> (p. 91)
                     </blockquote>
@@ -70,23 +69,25 @@
     </footer>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const animatedElements = document.querySelectorAll("section, blockquote");
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        observer.unobserve(entry.target); // Trigger animation only once
-                    }
-                });
-            },
-            { threshold: 0.1 } // Trigger when 10% of the element is visible
-        );
-
-        animatedElements.forEach((el) => observer.observe(el));
-    });
-</script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elementsToAnimate = document.querySelectorAll(".hidden");
+    
+            const observer = new IntersectionObserver(
+                (entries, observer) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add("visible");
+                            observer.unobserve(entry.target); // Stop observing once visible
+                        }
+                    });
+                },
+                {
+                    threshold: 0.1, // Trigger animation when 10% of the element is visible
+                }
+            );
+    
+            elementsToAnimate.forEach((el) => observer.observe(el));
+        });
+    </script>
 </body>
 </html>

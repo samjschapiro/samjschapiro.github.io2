@@ -89,7 +89,7 @@ nav {
     margin: 0;
 }
 
-body p {
+main p {
     font-size: 1.4rem; /* Increased font size for better readability */
     line-height: 1.8;  /* Maintain good spacing between lines */
     margin-bottom: 1.5rem; /* Ensure space between paragraphs */

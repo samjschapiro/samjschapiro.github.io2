@@ -59,10 +59,10 @@ blockquote {
     border-left: 6px solid #5c7aff;
     margin: 1.5rem 0;
     padding: 1rem 1.5rem;
-    background: #f5f7fa; /* Light background for better readability */
+    background: #ffffff; /* Light background for better readability */
     font-style: italic;
     font-size: 1rem;
-    color: #333;
+    color: #333; /* Dark gray for better contrast without being harsh */
     line-height: 1.8;
     border-radius: 8px; /* Rounded corners for a softer look */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -72,7 +72,7 @@ blockquote footer {
     text-align: right;
     font-size: 0.9rem;
     margin-top: 0.5rem;
-    color: #555;
+    color: #555; /* Medium gray for a softer tone */
     font-style: normal;
     font-weight: bold;
 }

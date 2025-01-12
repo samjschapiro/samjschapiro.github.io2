@@ -67,11 +67,10 @@
     <footer>
         <p>&copy; 2025 Philosophical Foundations of Intelligence Reading Group</p>
     </footer>
-
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const elementsToAnimate = document.querySelectorAll(".hidden");
-    
+
             const observer = new IntersectionObserver(
                 (entries, observer) => {
                     entries.forEach((entry) => {
@@ -85,7 +84,7 @@
                     threshold: 0.1, // Trigger animation when 10% of the element is visible
                 }
             );
-    
+
             elementsToAnimate.forEach((el) => observer.observe(el));
         });
     </script>

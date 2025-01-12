@@ -25,21 +25,22 @@
     </header>
 
     <main>
-        <section id="introduction" class="hidden">
+        <section id="introduction">
             <h2><i class="fas fa-lightbulb"></i> Introduction</h2>
-            <p>We are on the precipice of a scientific revolution in AI...</p>
+            <p>We are on the precipice of a scientific revolution in AI. How do theorists explain the remarkable generalization and reasoning abilities exhibited by LLMs? How do we push the generalization abilities of AI systems even further, into areas like scientific and industrial creativity?</p>
+            <p>While we don’t yet know the complete answers to these questions, we do know what the type of work that will yield these solutions will look like:</p>
             <ol>
                 <li>
                     It will probably come from young people who are newer to the field.
-                    <blockquote class="hidden">
-                        Almost always the men who achieve these fundamental inventions of a new paradigm have been either very young...
+                    <blockquote>
+                        Almost always the men who achieve these fundamental inventions of a new paradigm have been either very young or very new to the field whose paradigm they change. And perhaps that point need not have been made explicit, for obviously these are the men who, being little committed by prior practice to the traditional rules of normal science, are particularly likely to see that those rules no longer define a playable game and to conceive another set that can replace them.
                         <br>— Thomas S. Kuhn, <i>The Structure of Scientific Revolutions</i> (p. 90)
                     </blockquote>
                 </li>
                 <li>
-                    It will be preceded by rigorous philosophical investigations...
-                    <blockquote class="hidden">
-                        The proliferation of competing articulations, the willingness to try anything...
+                    It will be preceded by rigorous philosophical investigations and debates into the foundations of intelligence that unveil what the new paradigms should look like.
+                    <blockquote>
+                        The proliferation of competing articulations, the willingness to try anything, the expression of explicit discontent, the recourse to philosophy and to debate over fundamentals, all these are symptoms of a transition from normal to extraordinary research.
                         <br>— Thomas S. Kuhn, <i>The Structure of Scientific Revolutions</i> (p. 91)
                     </blockquote>
                 </li>
@@ -67,26 +68,5 @@
     <footer>
         <p>&copy; 2025 Philosophical Foundations of Intelligence Reading Group</p>
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const elementsToAnimate = document.querySelectorAll(".hidden");
-
-            const observer = new IntersectionObserver(
-                (entries, observer) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("visible");
-                            observer.unobserve(entry.target); // Stop observing once visible
-                        }
-                    });
-                },
-                {
-                    threshold: 0.1, // Trigger animation when 10% of the element is visible
-                }
-            );
-
-            elementsToAnimate.forEach((el) => observer.observe(el));
-        });
-    </script>
 </body>
 </html>

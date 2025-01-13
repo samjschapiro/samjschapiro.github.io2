@@ -205,60 +205,48 @@ footer {
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     }
 
+
+    /* CODE TO MODIFY IS BELOW /*
     /* Book Card Image */
     .book-card img {
         width: 100%; /* Full width of the card */
         border-radius: 8px; /* Matches the card's rounded corners */
         object-fit: cover; /* Ensures image fits neatly */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-        margin-bottom: 10px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-         /* Book Card Image Hover */
-    .book-card img:hover {
-        transform: scale(1.05); /* Zoom-in effect */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
-    }
-
-    .book-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    }
-
-    .book-card img {
-        width: 100%; /* Ensure the image takes up the full width of the card */
-        border-radius: 8px; /* Add rounded corners for a polished look */
-        object-fit: contain;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
-        margin-bottom: 10px; /* Add space between the image and the content below */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        margin-bottom: 10px; /* Space between the image and content */
         transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
     }
     
+    /* Book Card Image Hover */
     .book-card img:hover {
         transform: scale(1.05); /* Slight zoom-in on hover */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
     }
-
+    
+    .book-card:hover {
+        transform: translateY(-5px); /* Slight lift on hover */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow */
+    }
+    
     .book-card h3 {
-        font-family: 'Playfair Display', serif; /* Fantasy feel for titles */
+        font-family: 'Poppins', sans-serif; /* Matches overall title font style */
         font-size: 1.3rem;
-        color: #f5f5f5;
+        color: #2B6CB0; /* Primary color for consistency */
         margin-bottom: 5px;
         font-weight: 600;
     }
-
+    
     .book-card p {
-        font-family: 'Lora', serif;
+        font-family: 'Roboto', sans-serif; /* Matches body font style */
         font-size: 1rem;
-        color: #bdbdbd;
+        color: #333; /* Consistent readable color */
         margin: 3px 0;
     }
-
+    
     .category {
-        font-family: 'Playfair Display', serif;
+        font-family: 'Roboto', sans-serif; /* Matches body font style */
         font-size: 0.9rem;
-        color: #888;
+        color: #888; /* Subtle secondary text color */
         margin-top: 5px;
         font-style: italic;
     }
